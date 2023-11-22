@@ -1,9 +1,5 @@
-.title {
-  font-family: 'Lora';
-}
-
 .banner {
-  max-width: 920px;
+  max-width: 1100px;
   margin-top: 0;
 }
 
@@ -21,21 +17,23 @@
 }
 
 @media (min-width: 768px) {
+
+  .banner,
   .banner__title {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    gap: 2rem;
   }
 
   .banner {
     margin-top: 2rem;
-    display: flex;
-    justify-content: center;
     gap: 4rem;
   }
 
+  .banner__title {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
 
   .banner__logo {
     margin: 0 auto;
@@ -49,8 +47,8 @@
 
   .banner__photo {
     width: 50vw;
-    height: 50vh;
-    border-radius: 50px 0 0 0;
+    height: 80vh;
+    border-radius: 80px 0 0 0;
   }
 }
 
@@ -58,11 +56,4 @@
   .banner {
     gap: 6rem;
   }
-
-  .banner,
-  .banner__photo {
-    height: 80vh;
-  }
-
-
 }

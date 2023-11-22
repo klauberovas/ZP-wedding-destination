@@ -6,15 +6,17 @@ import mailIcon from './img/mail.svg';
 export const Footer = () => {
   return (
     <footer className="footer">
-      <h3>Kontaktujte nás</h3>
       <div className="footer__contact">
-        <div className="footer__office">
-          <p>Pobočka Praha</p>
-          <p>+420 777 111 777</p>
-        </div>
-        <div className="footer__office">
-          <p>Pobočka Plzeň</p>
-          <p>+420 722 085 228</p>
+        <h3 className="footer__title">Kontaktujte nás</h3>
+        <div className="footer__offices">
+          <div className="footer__office">
+            <p>Pobočka Praha</p>
+            <p>+420 777 111 777</p>
+          </div>
+          <div className="footer__office">
+            <p>Pobočka Plzeň</p>
+            <p>+420 722 085 228</p>
+          </div>
         </div>
       </div>
       <div className="footer__icons">
