@@ -1,0 +1,54 @@
+.title {
+  font-family: 'Lora';
+}
+
+.banner {
+  margin-top: 0;
+}
+
+.banner__title {
+  display: none;
+}
+
+.banner__photo {
+  width: 100%;
+  height: 50vh;
+  background-image: url(./img/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .banner__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner {
+    margin-top: 2rem;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+
+  .banner__logo {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    background-image: url(./img/banner-logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .banner__photo {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 50px 0 0 0;
+  }
+}

@@ -1,10 +1,12 @@
 import './style.css';
+import { Banner } from './components/Banner';
 
 export const HomePage = () => {
   return (
     <>
-      <h1>Svatba v zahraničí podle Vašich představ</h1>
-      <main></main>
+      <main>
+        <Banner />
+      </main>
     </>
   );
 };
