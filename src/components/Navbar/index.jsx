@@ -4,6 +4,7 @@ import './style.css';
 export const Navbar = ({isOpened, switchOff}) => {
 
   return (
+    
     <nav className={`navbar ${isOpened ? 'navbar--open' : ''}`}>
       <ul>
         <li>

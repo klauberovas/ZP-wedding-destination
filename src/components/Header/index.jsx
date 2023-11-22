@@ -10,6 +10,10 @@ export const Header = () => {
     setIsOpened(!isOpened);
   }
 
+  const toggleDown = () => {
+    setIsOpened(isOpened)
+  }
+
   const switchOff = () => {
     setIsOpened(false)
   }
