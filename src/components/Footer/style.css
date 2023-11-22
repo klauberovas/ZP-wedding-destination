@@ -4,17 +4,36 @@
   padding: 2rem 0;
 }
 
-.footer p {
+.footer h3 {
   margin: 0;
 }
 
-.footer__contact {
+.footer p {
+  margin: 0 auto;
+}
+
+.footer__contact,
+.footer__icons {
   display: flex;
+  justify-content: center;
   gap: 1rem;
+}
+
+.footer__contact {
   justify-content: center;
   margin: 1rem 0;
 }
 
-.footer__icons a {
-  margin: 0 1rem;
+.footer__text {
+  margin-top: 1rem;
+}
+
+
+@media (min-width: 570px) {
+
+  .footer__contact,
+  .footer__icons {
+    gap: 3rem;
+  }
+
 }

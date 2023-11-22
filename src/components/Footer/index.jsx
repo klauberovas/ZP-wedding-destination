@@ -28,6 +28,7 @@ export const Footer = () => {
           <img src={facebookIcon} alt="Facebook icon"></img>
         </a>
       </div>
+      <div className="footer__text">@2023 LAUBER DESTINATION WEDDING </div>
     </footer>
   );
 };
