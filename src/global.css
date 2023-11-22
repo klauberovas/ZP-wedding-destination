@@ -36,5 +36,9 @@ section {
 
 .title {
   font-family: 'Lora';
+  font-weight: 400;
+}
 
+.title--semibold {
+  font-weight: 600;
 }
