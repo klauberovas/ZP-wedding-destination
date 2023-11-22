@@ -11,19 +11,21 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 7vh;
+  height: auto;
   align-items: center;
 }
 
 /* Media*/
 
 @media (min-width: 350px) {
+
 .logo {
-  background-image: url(img/logo.svg);
+  background-image: url(img/logo.jpg);
   background-size: contain ;
   background-repeat: no-repeat;
   width: 15vw;
-  height: auto;
+  height: 8vh;
+  max-width: 300px;
 }
 
 .menu {
