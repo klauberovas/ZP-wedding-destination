@@ -1,0 +1,16 @@
+
+@media (min-width: 350px) {
+li {
+  list-style-type: none;
+}
+
+.navbar {
+  display:none;
+}
+
+.navbar--open {
+  display: block;
+}
+}
+
+

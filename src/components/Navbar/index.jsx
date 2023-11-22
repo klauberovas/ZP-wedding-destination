@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
 import './style.css';
 
-export const Navbar = () => {
+export const Navbar = ({isOpened, switchOff}) => {
+
   return (
-    <nav>
+    <nav className={`navbar ${isOpened ? 'navbar--open' : ''}`}>
       <ul>
         <li>
-          <Link to="/package">Svatební zájezdy</Link>
+          <Link to="/package" onClick={switchOff}>Svatební zájezdy</Link>
         </li>
         <li>
-          <Link to="/wedding-calculate">Svatební kalkulačka</Link>
+          <Link to="/wedding-calculate" onClick={switchOff}>Svatební kalkulačka</Link>
         </li>
         <li>
-          <Link to="/reference">Reference</Link>
+          <Link to="/reference" onClick={switchOff}>Reference</Link>
         </li>
         <li>
-          <Link to="/contact">Kontakt</Link>
+          <Link to="/contact" onClick={switchOff}>Kontakt</Link>
         </li>
       </ul>
     </nav>
