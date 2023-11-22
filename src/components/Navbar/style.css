@@ -1,16 +1,33 @@
 
-@media (min-width: 350px) {
+/* Obecné nastavení*/
 li {
   list-style-type: none;
 }
 
+/* Media*/
+
+@media (min-width: 350px) {
+
 .navbar {
-  display:none;
+  display: none;
 }
 
 .navbar--open {
   display: block;
+  padding-right: 5%;
 }
 }
 
+@media (min-width: 1100px) {
 
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    display: flex;
+    gap: 4rem;
+  }
+
+}
