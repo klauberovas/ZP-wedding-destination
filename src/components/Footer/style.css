@@ -1,0 +1,20 @@
+.footer {
+  background-color: var(--background-primary);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer__contact {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.footer__icons a {
+  margin: 0 1rem;
+}

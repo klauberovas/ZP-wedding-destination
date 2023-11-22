@@ -7,6 +7,7 @@ font-family: 'Nunito Sans', sans-serif; TEXT extra light, light, regular, medium
 
 :root {
   --background-primary: #F5EDDA;
+  --text: #3D3B3A;
 }
 
 * {
@@ -18,5 +19,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--text);
 }
