@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="E_I4MQV7jeQYuoeriWEi" name="Page-1">
+        <mxGraphModel dx="640" dy="343" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="HomePage" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="20" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Menu&lt;br&gt;state = isOpen" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Header" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Destination" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="6" target="20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Steps" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="AboutUs" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="8" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Packages&lt;br&gt;props = items&amp;nbsp;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="9" target="24">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Photogallery" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="970" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Footer" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1110" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Společné&lt;br&gt;style.css" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="20" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Title" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="ButtonUp" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="ButtonBack" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="270" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Button" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Step&lt;br&gt;props = number, icons, text" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Package&lt;br&gt;items.map((item) =&amp;gt;..." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Carousel" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="970" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="background img x img (component)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
