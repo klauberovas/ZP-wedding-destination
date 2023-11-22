@@ -16,6 +16,12 @@
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .banner__photo {
+    height: 70vh;
+  }
+}
+
 @media (min-width: 1100px) {
 
   .banner,
