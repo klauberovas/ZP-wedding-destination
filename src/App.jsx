@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 
 export const App = () => {
-  return (
+ return (
     <>
       <nav>
         <Link to="/">Domů</Link>
