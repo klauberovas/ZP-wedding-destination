@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500&display=swap');
 
 /*
-font-family: 'Lora', serif; NADPISY
-font-family: 'Nunito Sans', sans-serif; TEXT
+font-family: 'Lora', serif; NADPISY semibold
+font-family: 'Nunito Sans', sans-serif; TEXT extra light, light, regular, medium
 */
+
+:root {
+  --background-primary: #F5EDDA;
+}
 
 * {
   box-sizing: border-box;
@@ -11,10 +15,4 @@ font-family: 'Nunito Sans', sans-serif; TEXT
 
 html {
   font-family: 'Open Sans', sans-serif;
-}
-
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
 }

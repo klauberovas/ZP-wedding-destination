@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 export const App = () => {
   return (
-    <div className="container">
+    <>
       <nav>
         <Link to="/">Domů</Link>
         <span> | </span>
@@ -15,6 +15,6 @@ export const App = () => {
         <Link to="/contact">Kontakt</Link>
       </nav>
       <Outlet />
-    </div>
+    </>
   );
 };
