@@ -8,8 +8,9 @@ export const HomePage = () => {
     <>
       <main>
         <Banner />
-        </main>
-        <Destinations/>
+        <Packages />
+      </main>
+      <Destinations />
     </>
   );
 };
