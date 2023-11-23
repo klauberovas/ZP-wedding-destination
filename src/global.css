@@ -54,3 +54,19 @@ section {
 .title--semibold {
   font-weight: 600;
 }
+
+.text--center {
+  text-align: center;
+}
+
+.text--mobile {
+  max-width: 325px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width:768px) {
+  .text--mobile {
+    max-width: 100%;
+  }
+}
