@@ -1,9 +1,4 @@
 export const dataHomepage = {
-  homepage: {
-    logo: { src: "logo.svg"},
-    description: "Svatba v zahraničí podle Vašich představ",
-    photo: {src: "banner.jpg", popis: "Svatební foto"},
-  },
   destination: {
   title: "TOP destinace",
  photo: [
@@ -11,9 +6,11 @@ export const dataHomepage = {
  { src: "destination-pic1.jpg", popis: "Maledivy"},
  { src: "destination-pic1.jpg", popis: "Dominikana"}
 ],
-  titleOne: "Mauricius",
-  titleTwo: "Maledivy",
-   titleThree: "Dominikánská republika"
+  titleMal: "MALEDIVY",
+  titleMau: "MAURITIUS",
+   titleDom: "DOMIMIKÁNSKÁ REPUBLIKA",
+  description: {
+  } 
   },
 journey: {
  title: "Vaše cesta k vysněné svatbě",
@@ -81,3 +78,5 @@ photo: [
 ],
 }}}
 }
+
+export default dataHomepage;
