@@ -1,6 +1,5 @@
-
 /* Obecné nastavení*/
-li {
+.navbar__item {
   list-style-type: none;
 }
 
@@ -8,14 +7,14 @@ li {
 
 @media (min-width: 350px) {
 
-.navbar {
-  display: none;
-}
+  .navbar {
+    display: none;
+  }
 
-.navbar--open {
-  display: block;
-  padding-right: 5%;
-}
+  .navbar--open {
+    display: block;
+    padding-right: 5%;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -25,7 +24,7 @@ li {
     justify-content: space-between;
   }
 
-  ul {
+  .navbar__list {
     display: flex;
     gap: 4rem;
   }
