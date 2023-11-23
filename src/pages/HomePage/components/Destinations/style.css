@@ -12,5 +12,13 @@
   .container-destination {
     flex-direction: row;
     flex-wrap: wrap;
+    width: 80vw;
+  }
+}
+
+@media (min-width: 1100px) {
+  .container-destination {
+    width: 100vw;
+    justify-content: center;
   }
 }
