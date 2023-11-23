@@ -19,8 +19,8 @@ export const Header = () => {
       <div className="logo">
       </div>
       <div className={`menu ${isOpened ? '' : 'menu--closed'}`}>
-          <button className="menu__btn" onClick={toggleMenu}></button>
-      <Navbar isOpened={isOpened} switchOff={switchOff}/>
+        <button className={`menu__btn ${isOpened ? 'close' : ''}`} onClick={toggleMenu}></button>
+        <Navbar isOpened={isOpened} switchOff={switchOff}/>
       </div>
     </header>
   );

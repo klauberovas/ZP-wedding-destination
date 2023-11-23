@@ -47,6 +47,10 @@ header {
   cursor: pointer;
   }
 
+  .menu__btn.close {
+    background-image: url('./img/close-icon.png');
+  }
+
 .menu--close {
   display: none;
 }}
