@@ -37,6 +37,10 @@ export const Destinations = () => {
           );
         })}
       </div>
+      <div className="destination-button">
+      <p>Podívejte se na naše nejžádanější zájezdy</p>
+      <button type="button">Zobrazit zájezdy</button>
+      </div>
     </section>
   );
 }
