@@ -7,6 +7,8 @@ font-family: 'Nunito Sans', sans-serif; TEXT extra light, light, regular, medium
 
 :root {
   --background-primary: #F5EDDA;
+  --background-secundary: #F5F5F5;
+  --button: #DDCC9F;
   --text: #3D3B3A;
 }
 
