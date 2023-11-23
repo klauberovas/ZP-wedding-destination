@@ -8,8 +8,8 @@ export const HomePage = () => {
     <>
       <main>
         <Banner />
-        </main>
         <Destinations/>
+        </main>
     </>
   );
 };

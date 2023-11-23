@@ -19,7 +19,9 @@
 
 @media (min-width: 1100px) {
   .container-destination {
-    width: 100vw;
-    justify-content: center;
+    width: 1100px;
+    margin: 0 auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
