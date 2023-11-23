@@ -1,18 +1,18 @@
 /* Nastavení hlavního kontejneru*/
 
 .container-destination {
- display: flex;
- flex-direction: column;
- margin: 0 auto;
- padding-top: 3%;
- height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 3%;
+  height: auto;
 }
 
 @media (min-width: 850px) {
   .container-destination {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80vw;
+    width: auto;
     margin: 1%;
   }
 }
