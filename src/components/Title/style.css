@@ -1,0 +1,17 @@
+.title {
+  font-family: 'Lora';
+  margin: 0 auto;
+  padding: 0;
+}
+
+.title--regular {
+  font-weight: 400;
+}
+
+.title--semibold {
+  font-weight: 600;
+}
+
+.text--center {
+  text-align: center;
+}

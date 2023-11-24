@@ -1,6 +1,7 @@
 import './style.css';
 import { Step } from '../Step';
 import { Button } from '../../../../components/Button';
+import { Title } from '../../../../components/Title';
 import search from './img/icon-search.svg';
 import calculate from './img/icon-calculate.svg';
 import telephone from './img/icon-telephone.svg';
@@ -32,7 +33,7 @@ const data = [
 export const Steps = () => {
   return (
     <section className="steps">
-      <h2 className="title title--semibold">Jak postupovat?</h2>
+      <Title label="Jak postupovat?" />
       <div className="steps__container">
         {data.map(({ icon, alt, text }, index) => (
           <Step key={index} icon={icon} alt={alt} text={text} />
