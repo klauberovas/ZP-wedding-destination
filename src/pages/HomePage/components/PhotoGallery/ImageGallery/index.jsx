@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./style.css";
 
-const ImageGallery = ({ images }) => {
+export const ImageGallery = ({ images }) => {
   const [image, setImage] = useState(0);
 
   const showNextImage = () => {
@@ -43,25 +43,10 @@ const ImageGallery = ({ images }) => {
       <button
         onClick={showNextImage}
         className="img-btn"
-        style={{ right: 0 }}
-        aria-label="View Next Image"
-      >
+        style={{ right: 0 }}>
         <ChevronRight aria-hidden />
       </button>
-      <div className="img-photogalery"
-      >
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className="img-dot-btn"
-            aria-label={`View Image ${index + 1}`}
-            onClick={() => setImage(index)}
-          >
-          </button>
-        ))}
-      </div>
     </div>
   );
 };
 
-export default ImageGallery;
