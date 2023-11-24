@@ -1,6 +1,7 @@
 import './style.css'
 import { Destination } from './Destination'
 import { Button } from './../../../../components/Button'
+import {Title} from './../../../../components/Title'
 import { dataDestination } from './DataDestination'
 import maledivy from './DataDestination/destination-pic1.jpg'
 import dominikana from './DataDestination/destination-pic2.jpg'
@@ -10,7 +11,7 @@ export const Destinations = () => {
 
   return (
     <section>
-      <h2>TOP destinace</h2>
+      <Title label="TOP destinace"/>
       <div className="container-destination">
         {dataDestination.map((destination) => {
           let photo;

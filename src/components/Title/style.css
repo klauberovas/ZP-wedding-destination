@@ -1,7 +1,10 @@
+
 .title {
   font-family: 'Lora';
   margin: 0 auto;
   padding: 0;
+  text-align: center;
+  flex-basis: 40%;
 }
 
 .title--regular {
@@ -15,3 +18,22 @@
 .text--center {
   text-align: center;
 }
+
+/* Linie mezi h2 */
+.title-line {
+  display: flex;
+  align-items: center;
+  margin: 5%;
+ }
+ 
+ .line-one {
+  flex: 1;
+  background-color: black;
+  height: 0.5px;
+ }
+ 
+ .line-two {
+  flex: 1;
+  background-color: black;
+  height: 0.5px;
+ }

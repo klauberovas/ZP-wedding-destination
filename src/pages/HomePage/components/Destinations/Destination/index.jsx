@@ -8,7 +8,7 @@ export const Destination = ({title, description, photo}) => {
     <div className="hide">
      <div className="description">{description}</div>
    </div>
-    <div className="title">
+    <div className="title-destination">
      <h3>{title}</h3>
     </div>
    </div>

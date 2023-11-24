@@ -19,10 +19,6 @@ header {
 
 @media (min-width: 350px) {
 
- header {
-  align-items: flex-start;
-  }
-
 .logo {
   background-image: url(img/logo.jpg);
   background-size: contain ;
@@ -33,7 +29,7 @@ header {
 }
 
 .logo--big {
-  width: 30vw;
+  width: 25vw;
   height: 20vh;
   max-width: 300px;
 }

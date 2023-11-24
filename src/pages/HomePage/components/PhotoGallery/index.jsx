@@ -1,4 +1,5 @@
 import {ImageGallery}  from "./ImageGallery"
+import { Title } from "../../../../components/Title"
 import './style.css'
 import pic1 from "./pic1.jpg"
 import pic2 from "./pic2.jpg"
@@ -24,7 +25,7 @@ export const Photogallery = () => {
   return (
     <section className="photogallery">
     <div className="photo-gallery-all" >
-      <h2>Fotogalerie</h2>
+    <Title label="Fotogalerie" />
       <ImageGallery images={IMAGES} />
     </div>
     </section>
