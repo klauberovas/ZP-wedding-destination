@@ -1,6 +1,7 @@
 import './style.css';
 import { Banner } from './components/Banner';
 import { Destinations } from './components/Destinations';
+import { Steps } from './components/Steps';
 import { Packages } from './components/Packages';
 import { Photogallery } from './components/PhotoGallery';
 
@@ -10,8 +11,9 @@ export const HomePage = () => {
       <main>
         <Banner />
         <Destinations />
+        <Steps />
         <Packages />
-        <Photogallery/>
+        <Photogallery />
       </main>
     </>
   );
