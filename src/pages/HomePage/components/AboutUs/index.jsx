@@ -6,23 +6,31 @@ export const AboutUs = () => {
     <section className="about-us">
       <Title label="Proč s námi?" />
       <div className="container">
-        <div className="container__item container__img hidden"></div>
-        <div className="container__item">
+        <div className="container__item about-us__img hidden"></div>
+        <div className="container__item about-us__text">
           <p>
             Jsme cestovní agentura specializující se na zprostředkování svateb v
             exotických destinacích.
           </p>
           <p>
-            Díky naší svatební kalkulačce si můžete spočítat náklady na vaši
-            vysněnou svatbu. Cenově dostupné svatební balíčky jsou
-            strukturované, takže můžete snadno přidat doplňkové služby a platit
-            pouze za to co potřebujete.
+            Díky naší <strong>svatební kalkulačce</strong> si můžete spočítat
+            náklady na vaši vysněnou svatbu. Cenově dostupné svatební balíčky
+            jsou strukturované, takže můžete snadno přidat doplňkové služby a
+            platit pouze za to co potřebujete.
           </p>
           <p>
             Náš tým s vámi bude spolupracovat na nalezení vysněného místa pro
             uspořádání vaší svatby a postárá se o vás a vaše hosty.
           </p>
         </div>
+      </div>
+      <div className="about-us__label hidden">
+        <p>
+          od <span className="about-us__large">2015</span>
+        </p>
+        <p>
+          <span className="about-us__large">6.500</span> +
+        </p>
       </div>
     </section>
   );

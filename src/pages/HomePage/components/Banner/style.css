@@ -48,12 +48,12 @@
     background-image: url(./img/banner-logo.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
 
   .banner__photo {
     width: 50vw;
-    height: 80vh;
+    height: 70vh;
     border-radius: 80px 0 0 0;
   }
 }
