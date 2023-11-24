@@ -1,0 +1,33 @@
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-align: center;
+  width: 180px;
+  height: 180px
+}
+
+.step:nth-child(1) {
+  background-color: #D4C9AD;
+}
+
+.step:nth-child(2) {
+  background-color: #DCD2B7;
+}
+
+.step:nth-child(3) {
+  background-color: #E3DAC0;
+}
+
+.step:nth-child(4) {
+  background-color: #EBE2CA;
+}
+
+@media (min-width: 1100px) {
+  .step {
+    width: 230px;
+    height: 230px;
+  }
+}
