@@ -13,11 +13,15 @@ export const Header = () => {
   const switchOff = () => {
     setIsOpened(false)
   }
-
   return (
     <header>
-      <div className="logo">
-      </div>
+      <a href="/" className={`logo ${isOpened ? 'logo--big' : ''}`}>
+      </a>
+      {!isOpened && (
+        <div className="header-title">
+          <a href="/">Svatby v zahraničí</a>
+        </div>
+      )}
       <div className={`menu ${isOpened ? '' : 'menu--closed'}`}>
         <button className={`menu__btn ${isOpened ? 'close' : ''}`} onClick={toggleMenu}></button>
         <Navbar isOpened={isOpened} switchOff={switchOff}/>

@@ -1,6 +1,7 @@
 import './style.css'
 import { Destination } from './Destination'
-import { dataDestination } from './DataDestination';
+import { Button } from './../../../../components/Button'
+import { dataDestination } from './DataDestination'
 import maledivy from './DataDestination/destination-pic1.jpg'
 import dominikana from './DataDestination/destination-pic2.jpg'
 import mauricius from './DataDestination/destination-pic3.jpg'
@@ -39,7 +40,7 @@ export const Destinations = () => {
       </div>
       <div className="destination-button">
       <p>Podívejte se na naše nejžádanější zájezdy</p>
-      <button type="button">Zobrazit zájezdy</button>
+      <Button label="Svatební zájezdy" url="/package" />
       </div>
     </section>
   );

@@ -19,6 +19,10 @@ header {
 
 @media (min-width: 350px) {
 
+ header {
+  align-items: flex-start;
+  }
+
 .logo {
   background-image: url(img/logo.jpg);
   background-size: contain ;
@@ -28,11 +32,25 @@ header {
   max-width: 300px;
 }
 
+.logo--big {
+  width: 30vw;
+  height: 20vh;
+  max-width: 300px;
+}
+
+
+.header-title {
+  padding-top: 3%;
+  flex-basis: 45%;
+  text-align: right;
+}
+
 .menu {
   flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: end;
+  padding-right: 2%;
 }
 
 .menu__btn {
@@ -55,6 +73,20 @@ header {
   display: none;
 }}
 
+@media (min-width: 500px) {
+  .header-title {
+    padding-bottom: 2%;
+    padding-right: 3%;
+  }
+}
+
+@media (min-width: 800px) {
+  .header-title {
+    padding-top: 2%;
+    padding-right: 5%;
+  }
+}
+
 @media (min-width: 1100px) {
 
 .menu {
@@ -64,6 +96,10 @@ padding-right: 3%;
 }
 
 .menu__btn {
+  display: none;
+}
+
+.header-title {
   display: none;
 }
 
