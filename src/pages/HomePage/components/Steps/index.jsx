@@ -1,6 +1,6 @@
 import './style.css';
 import { Step } from '../Step';
-import { Link } from 'react-router-dom';
+import { Button } from '../../../../components/Button';
 
 export const Steps = () => {
   return (
@@ -9,12 +9,7 @@ export const Steps = () => {
       <div className="steps__container">
         <Step />
       </div>
-      <div className="button-container">
-        <Link to="/wedding-calculate" className="button">
-          Svatební kalkulačka
-        </Link>
-      </div>
-      ;
+      <Button label="Svatební kalkulačka" url="/wedding-calculate" />
     </section>
   );
 };
