@@ -5,5 +5,4 @@
 
 .navbar__item.active {
   font-weight: bold;
-  border-bottom: 2px solid rgb(199, 192, 192);
 }
