@@ -1,4 +1,3 @@
-
 .title {
   font-family: 'Lora';
   margin: 0 auto;
@@ -11,10 +10,6 @@
   font-weight: 400;
 }
 
-.title--semibold {
-  font-weight: 600;
-}
-
 .text--center {
   text-align: center;
 }
@@ -24,16 +19,17 @@
   display: flex;
   align-items: center;
   margin: 5%;
- }
- 
- .line-one {
+  margin-top: 0;
+}
+
+.line-one {
   flex: 1;
   background-color: black;
   height: 0.5px;
- }
- 
- .line-two {
+}
+
+.line-two {
   flex: 1;
   background-color: black;
   height: 0.5px;
- }
+}

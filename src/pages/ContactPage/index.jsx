@@ -1,3 +1,15 @@
+import { ButtonBack } from '../../components/ButtonBack';
+import { Title } from '../../components/Title';
+import { ButtonUp } from '../../components/ButtonUp';
+
 export const ContactPage = () => {
-  return <h1>Kontakt</h1>;
+  return (
+    <>
+      <ButtonBack />
+      <main>
+        <Title label="Kontakt" />
+        <ButtonUp />
+      </main>
+    </>
+  );
 };

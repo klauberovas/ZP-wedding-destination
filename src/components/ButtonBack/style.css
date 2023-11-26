@@ -1,0 +1,16 @@
+.button-back {
+  display: none;
+}
+
+.button-back__label {
+  font-size: 12px;
+}
+
+@media (min-width:768px) {
+  .button-back {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+}
