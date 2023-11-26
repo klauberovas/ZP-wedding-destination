@@ -48,6 +48,11 @@ section {
   margin-right: auto;
 }
 
+
+.text--center {
+  text-align: center;
+}
+
 @media (min-width:768px) {
   .text--mobile {
     max-width: 100%;

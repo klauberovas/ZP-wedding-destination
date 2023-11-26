@@ -1,6 +1,6 @@
 .title {
   font-family: 'Lora';
-  margin: 0 auto;
+  margin: 1rem auto 0.5rem auto;
   padding: 0;
   text-align: center;
   flex-basis: 40%;
@@ -24,12 +24,12 @@
 
 .line-one {
   flex: 1;
-  background-color: black;
+  background-color: var(--text);
   height: 0.5px;
 }
 
 .line-two {
   flex: 1;
-  background-color: black;
+  background-color: var(--text);
   height: 0.5px;
 }

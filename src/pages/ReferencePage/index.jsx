@@ -36,8 +36,8 @@ export const ReferencePage = () => {
     <>
       <ButtonBack />
       <main>
+        <Title label="Reference" />
         <div className="reference-container">
-          <Title label="Reference" />
           {data.map(({ id, author, text, photo, alt }) => (
             <Reference
               key={id}
