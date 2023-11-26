@@ -1,0 +1,21 @@
+
+@media (min-width: 1100px) {
+.container-packages {
+  width: 80vw;
+  margin: 0 auto;
+  background-color: #F5F5F5 ;
+  border-radius: 20px;
+  height: 50vh;
+}
+
+.destination-packages {
+  width: 100vw;
+  margin: 0;
+  display: flex;
+}
+
+.package-pic {
+  max-width: 400px;
+  height: 50vh;
+}
+}

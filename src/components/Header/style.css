@@ -21,8 +21,6 @@ header {
 
 header {
   width: 100%;
-  position: absolute;
-  z-index: 2;
 }
 
 .logo {
@@ -103,10 +101,6 @@ padding-right: 3%;
   display: none;
 }
 
-
-header {
-  position: relative;
-}
 }
 
 

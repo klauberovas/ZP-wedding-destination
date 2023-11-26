@@ -1,6 +1,9 @@
 import { ButtonBack } from '../../components/ButtonBack';
 import { Title } from '../../components/Title';
 import { ButtonUp } from '../../components/ButtonUp';
+import { PackagesOne } from './Packages/PackagesOne';
+import { PackagesTwo } from './Packages/PackagesTwo';
+import {PackagesThree} from './Packages/PackagesThree'
 
 export const PackagePage = () => {
   return (
@@ -8,8 +11,11 @@ export const PackagePage = () => {
       <ButtonBack />
       <main>
         <Title label="Svatební zájezdy" />
-        <ButtonUp />
+        <PackagesOne />
+        <PackagesTwo/>
+        <PackagesThree />
       </main>
+      <ButtonUp />
     </>
   );
 };
