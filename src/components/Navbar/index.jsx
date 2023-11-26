@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { TabLink } from './TabLInk';
 
 export const Navbar = ({ isOpened, switchOff }) => {
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState('/');
 
   const handleClick = (tab) => {
     setActive(tab);
