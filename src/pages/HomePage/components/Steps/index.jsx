@@ -43,7 +43,7 @@ export const Steps = () => {
           <Step key={index} icon={icon} alt={alt} text={text} url={url} />
         ))}
       </div>
-      <Button label="Svatební kalkulačka" url="/wedding-calculate" />
+      {/* <Button label="Svatební kalkulačka" url="/wedding-calculate" /> */}
     </section>
   );
 };
