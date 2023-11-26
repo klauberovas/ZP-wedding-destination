@@ -1,0 +1,8 @@
+.button-up {
+  display: flex;
+  justify-content: center;
+}
+
+.button-up:hover {
+  cursor: pointer;
+}

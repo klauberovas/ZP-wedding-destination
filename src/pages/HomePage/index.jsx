@@ -5,6 +5,7 @@ import { Steps } from './components/Steps';
 import { AboutUs } from './components/AboutUs';
 import { Packages } from './components/Packages';
 import { Photogallery } from './components/PhotoGallery';
+import { ButtonUp } from '../../components/ButtonUp';
 
 export const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ export const HomePage = () => {
         <AboutUs />
         <Packages />
         <Photogallery />
+        <ButtonUp />
       </main>
     </>
   );
