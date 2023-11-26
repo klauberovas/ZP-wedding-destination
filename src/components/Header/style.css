@@ -19,6 +19,12 @@ header {
 
 @media (min-width: 350px) {
 
+header {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
 .logo {
   background-image: url(img/logo.jpg);
   background-size: contain ;
@@ -97,6 +103,10 @@ padding-right: 3%;
   display: none;
 }
 
+
+header {
+  position: relative;
+}
 }
 
 
