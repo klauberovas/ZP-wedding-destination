@@ -34,7 +34,6 @@ header {
   max-width: 300px;
 }
 
-
 .header-title {
   padding-top: 3%;
   flex-basis: 45%;
@@ -46,7 +45,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding-right: 2%;
 }
 
 .menu__btn {

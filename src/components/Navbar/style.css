@@ -14,10 +14,17 @@
   .navbar--open {
     display: block;
     padding-right: 5%;
+    width: 150px;
   }
 
   .navbar__list {
     padding-left: 0;
+  }
+}
+
+@media (min-width: 500px) {
+  .navbar--open {
+    width: 180px;
   }
 }
 
