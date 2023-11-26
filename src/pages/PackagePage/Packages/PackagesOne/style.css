@@ -1,7 +1,7 @@
 
 @media (min-width: 1100px) {
 .container-packages {
-  width: 80vw;
+  width: 100%;
   margin: 0 auto;
   background-color: #F5F5F5 ;
   border-radius: 20px;
@@ -9,13 +9,18 @@
 }
 
 .destination-packages {
-  width: 100vw;
-  margin: 0;
   display: flex;
 }
 
 .package-pic {
-  max-width: 400px;
+  max-width: 500px;
   height: 50vh;
+  border-radius: 20px;
 }
+
+.package-title {
+  padding-top: 3%;
+  margin-left: 9%;
+}
+
 }
