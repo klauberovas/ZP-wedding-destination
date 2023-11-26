@@ -1,4 +1,4 @@
-import { Package } from '../Package';
+import { Package } from './Package';
 import { dataPackages } from './DataPackages';
 import { Title } from '../../../../components/Title';
 import './style.css';
