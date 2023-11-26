@@ -1,0 +1,10 @@
+.navbar__item {
+  text-decoration: none; 
+  padding-bottom: 5px; 
+}
+
+.navbar__item.active {
+  font-weight: bold;
+  color: rgb(141, 102, 36);
+  border-bottom: 2px solid rgb(205, 148, 49);
+}

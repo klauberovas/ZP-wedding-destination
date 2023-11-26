@@ -1,29 +1,37 @@
-import { Link } from 'react-router-dom';
 import './style.css';
+import { useState } from 'react';
+import { TabLink } from './TabLInk';
 
 export const Navbar = ({ isOpened, switchOff }) => {
+  const [active, setActive] = useState('');
+
+  const handleClick = (tab) => {
+    setActive(tab);
+    switchOff();
+  };
+
   return (
     <nav className={`navbar ${isOpened ? 'navbar--open' : ''}`}>
       <ul className="navbar__list">
         <li className="navbar__item">
-          <Link to="/package" onClick={switchOff}>
-            Svatební zájezdy
-          </Link>
+        <TabLink toActive="/package" activeTab={active} onClick={() => handleClick('package')}>
+          Svatební zájezdy
+          </TabLink>
         </li>
         <li className="navbar__item">
-          <Link to="/wedding-calculate" onClick={switchOff}>
-            Svatební kalkulačka
-          </Link>
+        <TabLink toActive="/wedding-calculate" activeTab={active} onClick={() => handleClick('wedding-calculate')}>
+          Svatební kalkulačka
+        </TabLink>
         </li>
         <li className="navbar__item">
-          <Link to="/reference" onClick={switchOff}>
-            Reference
-          </Link>
+        <TabLink toActive="/reference" activeTab={active} onClick={() => handleClick('reference')}>
+          Reference
+        </TabLink>
         </li>
         <li className="navbar__item">
-          <Link to="/contact" onClick={switchOff}>
-            Kontakt
-          </Link>
+        <TabLink toActive="/contact" activeTab={active} onClick={() => handleClick('contact')}>
+          Kontakt
+        </TabLink>
         </li>
       </ul>
     </nav>
