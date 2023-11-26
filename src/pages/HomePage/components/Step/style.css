@@ -6,7 +6,9 @@
   border-radius: 50%;
   text-align: center;
   width: 180px;
-  height: 180px
+  height: 180px;
+
+  cursor: pointer;
 }
 
 .step:nth-child(1) {
@@ -29,5 +31,9 @@
   .step {
     width: 230px;
     height: 230px;
+  }
+
+  .step:hover {
+    scale: 1.1;
   }
 }
