@@ -1,5 +1,5 @@
 import './style.css';
-import { Step } from '../Step';
+import { Step } from './Step';
 import { Button } from '../../../../components/Button';
 import { Title } from '../../../../components/Title';
 import search from './img/icon-search.svg';
