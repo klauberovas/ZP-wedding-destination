@@ -1,5 +1,6 @@
 .reference {
   max-width: 450px;
+  flex-wrap: wrap;
 }
 
 .reference__img,
@@ -39,6 +40,15 @@
 
   .order--second {
     order: 2;
+  }
+
+  .reference__gallery {
+    flex-basis: 100%;
+    order: 3;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
