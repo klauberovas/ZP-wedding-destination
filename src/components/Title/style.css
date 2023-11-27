@@ -10,10 +10,6 @@
   font-weight: 400;
 }
 
-.text--center {
-  text-align: center;
-}
-
 /* Linie mezi h2 */
 .title-line {
   display: flex;

@@ -25,7 +25,7 @@ export const ReferencePage = () => {
     },
     {
       id: 2,
-      author: 'Nikol  & kristyán',
+      author: 'Nikol  & Kristyán',
       text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
       photo: sunset,
       alt: 'Newlyweds on the beach at sunset',
@@ -46,6 +46,7 @@ export const ReferencePage = () => {
               photo={photo}
               alt={alt}
               corner={id % 2 === 0 ? 'right-corner' : 'left-corner'}
+              order={id % 2 !== 0 ? 'order--second' : null}
             />
           ))}
         </div>

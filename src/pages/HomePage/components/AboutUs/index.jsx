@@ -5,9 +5,9 @@ export const AboutUs = () => {
   return (
     <section className="about-us">
       <Title label="Proč s námi?" />
-      <div className="container">
-        <div className="container__item about-us__img hidden"></div>
-        <div className="container__item about-us__text">
+      <div className="container-flex">
+        <div className="container-flex__item about-us__img right-corner hidden"></div>
+        <div className="container-flex__item about-us__text">
           <p>
             Jsme cestovní agentura specializující se na zprostředkování svateb v
             exotických destinacích.
