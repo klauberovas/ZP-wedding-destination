@@ -11,8 +11,12 @@ export const Package = ({name, packages, photo, contains, price}) => {
     <div className="package-title">
      <div className="title">{name}</div>
      <div className="type-packages">{packages}</div>
-     <div className="contains">{contains}</div>
-     <div className="package-price"></div>
+     <div className="contains" >  <ul>
+          {contains.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul></div>
+     <div className="package-price">{price}</div>
      <Button label="Mám zájem" />
     </div>
    </div>
