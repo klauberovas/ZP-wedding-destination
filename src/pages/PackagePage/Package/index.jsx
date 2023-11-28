@@ -9,7 +9,7 @@ export const Package = ({name, packages, photo, contains, price}) => {
     <div className="pic-container">
     <img className="package-pic" src={photo}></img>
     </div>
-    <div className="package-title">
+    <div className="package-section">
      <h2 className="title-package">{name}</h2>
      <div className="type-packages">{packages}</div>
      <div className="contains" >  
