@@ -13,7 +13,7 @@ export const PackagesThree = () => {
         <Package
           key={selectedPackage.id}
           name={selectedPackage.name}
-          package={selectedPackage.pack}
+          packages={selectedPackage.pack}
           photo={photo}
           contains={selectedPackage.contains}
           price={selectedPackage.price}
