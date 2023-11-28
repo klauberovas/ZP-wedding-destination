@@ -64,11 +64,13 @@
 
  .pic-container {
   flex-basis: 50%;
+  padding-top: 1%;
  }
  .package-pic {
+  padding: 3%;
   min-width: 340px;
   height: 407px;
-  object-fit: cover;
+  border-radius: 5%;
  }
 }
 
