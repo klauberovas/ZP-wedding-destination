@@ -55,7 +55,6 @@
   height: auto;
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
  }
 
  .package-title {
