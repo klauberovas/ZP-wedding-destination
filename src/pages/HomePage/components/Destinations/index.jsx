@@ -11,7 +11,7 @@ export const Destinations = () => {
   return (
     <section id="destination">
       <Title label="TOP destinace" />
-      <div className="container-destination">
+      <div className="destination__hp">
         {dataDestination.map((destination) => {
           let photo;
           switch (destination.id) {

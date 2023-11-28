@@ -9,7 +9,7 @@ export const PackagesOne = () => {
   const photo = maldives;
 
   return (
-    <section id="destination-packages">
+    <section id="packages">
         <Package
           key={selectedPackage.id}
           name={selectedPackage.name}
