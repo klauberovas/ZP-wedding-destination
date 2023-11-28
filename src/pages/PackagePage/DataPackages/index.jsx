@@ -2,10 +2,10 @@ export const dataDestinationPackages = [
   {
     id: 0,
     name: 'Svatba na Maledivách',
-    package: 'Balíček LIGHT',
+    pack: 'Balíček LIGHT',
     contains: [
       '5 nocí',
-      'ALL INCLUSIVE*****',
+      'ALL INCLUSIVE *****',
       'Letenky tam a zpět',
     ],
     price: 'Svatební zájezd od 100.000,-',
@@ -13,7 +13,7 @@ export const dataDestinationPackages = [
   {
     id: 1,
     name: 'Svatba v Dominikáně',
-    packages: 'Balíček DELUXE',
+    pack: 'Balíček DELUXE',
     contains: [
       '7 nocí',
       'Polopenze',
@@ -24,10 +24,10 @@ export const dataDestinationPackages = [
   {
     id: 2,
     name: 'Svatba na Maurícius',
-    package: 'Balíček PREMIUM',
+    pack: 'Balíček PREMIUM',
     contains: [
       '7 nocí',
-      'ALL INCLUSIVE*****',
+      'ALL INCLUSIVE *****',
       'Letenky tam a zpět',
     ],
     price: 'Svatební balíček od 140.000,-',

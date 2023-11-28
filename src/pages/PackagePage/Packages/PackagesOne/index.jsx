@@ -1,4 +1,4 @@
-import './style.css';
+
 import { Package } from '../../Package';
 import { dataDestinationPackages } from '../../DataPackages';
 import maldives from './../../img/maldives.jpg';
@@ -10,16 +10,14 @@ export const PackagesOne = () => {
 
   return (
     <section id="destination-packages">
-      <div className="container-packages">
         <Package
           key={selectedPackage.id}
           name={selectedPackage.name}
-          package={selectedPackage.package}
+          packages={selectedPackage.pack}
           photo={photo}
           contains={selectedPackage.contains}
           price={selectedPackage.price}
         />
-      </div>
     </section>
   );
 };
