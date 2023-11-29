@@ -1,11 +1,11 @@
 export const SelectInput = ({ data, label }) => {
   return (
-    <>
-      <label>{label}</label>
+    <label className="wedding-calculate__field">
+      {label}
       <select>
         <Option data={data} />
       </select>
-    </>
+    </label>
   );
 };
 

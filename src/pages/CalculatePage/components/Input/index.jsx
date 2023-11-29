@@ -1,6 +1,6 @@
 export const Input = ({ type, label }) => {
   return (
-    <label htmlFor="">
+    <label className="wedding-calculate__field" htmlFor="">
       {label}
       <input type={type} />
     </label>
