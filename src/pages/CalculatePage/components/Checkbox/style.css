@@ -1,0 +1,11 @@
+.service-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.service-item__label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}

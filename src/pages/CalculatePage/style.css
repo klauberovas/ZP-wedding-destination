@@ -40,10 +40,16 @@ textarea {
 }
 
 .wedding-ceremony,
-.wedding-package {
+.wedding-package,
+.wedding-services {
   display: flex;
 }
 
 .ceremony-type {
   margin-left: 2%;
+}
+
+.wedding-services {
+  flex-wrap: wrap;
+  gap: 1rem;
 }
