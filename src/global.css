@@ -37,6 +37,7 @@ body {
 main {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
 }
 
 section {

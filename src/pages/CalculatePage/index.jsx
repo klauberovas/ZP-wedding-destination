@@ -26,6 +26,7 @@ import firework from './img/firework.jpg';
 import makeup from './img/makeup.jpg';
 import cruise from './img/cruise.jpg';
 import flight from './img/flight.jpg';
+import { RadioInputDown } from './components/RadioInputDown';
 
 export const CalculatePage = () => {
   const [data, setData] = useState([
@@ -125,6 +126,9 @@ export const CalculatePage = () => {
       <ButtonBack />
       <main>
         <Title label="Svatební kalkulačka" />
+        <div className="wedding-price_display">
+          <div className="price-total">0 Kč</div>
+        </div>
         <form className="wedding-calculate">
           <SelectInput
             data={['Maledivy', 'Dominikánská republika', 'Mauricus']}
@@ -150,6 +154,18 @@ export const CalculatePage = () => {
           {data.map(({ label, photo, id }) => (
             <Checkbox key={id} label={label} image={photo} />
           ))}
+        </div>
+        <h3>Místo svatebního obřadu</h3>
+        <div className="wedding-place">
+          <RadioInputDown label="Pláž"/>
+          <RadioInputDown label="Zahrada"/>
+          <RadioInputDown label="Terasa"/>
+          <RadioInputDown label="Kaple"/>
+        </div>
+        <h3>Cestujete s dětmi</h3>
+        <div className="wedding-question">
+          <RadioInputDown label="Ano"/>
+          <RadioInputDown label="Ne"/>
         </div>
         <ButtonUp />
       </main>
