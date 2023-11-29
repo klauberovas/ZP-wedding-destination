@@ -136,8 +136,8 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Typ obřadu</h3>
       <div className="wedding-calculate__ceremony">
-        <RadioInput label="oficiální" image={official} />
-        <RadioInput label="symbolický" image={symbolic} />
+        <RadioInput label="Oficiální" image={official} name="ceremony" />
+        <RadioInput label="Symbolický" image={symbolic} name="ceremony" />
       </div>
 
       <h3 className="wedding-calculate__title">Typ svatebního obřadu</h3>
