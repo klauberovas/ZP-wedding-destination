@@ -136,15 +136,15 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Typ obřadu</h3>
       <div className="wedding-calculate__ceremony">
-        <RadioInput label="oficiální" image={official} name="ceremony" />
-        <RadioInput label="symbolický" image={symbolic} name="ceremony" />
+        <RadioInput label="oficiální" image={official} />
+        <RadioInput label="symbolický" image={symbolic} />
       </div>
 
       <h3 className="wedding-calculate__title">Typ svatebního obřadu</h3>
       <div className="wedding-calculate__packages">
-        <RadioInput label="Balíček Light" image={light} name="package" />
-        <RadioInput label="Balíček Delux" image={deluxe} name="package" />
-        <RadioInput label="Balíček Premium" image={premium} name="package" />
+        <RadioInput label="Balíček Light" image={light} />
+        <RadioInput label="Balíček Delux" image={deluxe} />
+        <RadioInput label="Balíček Premium" image={premium} />
       </div>
 
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
@@ -156,16 +156,16 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
       <div className="wedding-calculate__place">
-        <RadioInputDown label="Pláž" name="place" />
-        <RadioInputDown label="Zahrada" name="place" />
-        <RadioInputDown label="Terasa" name="place" />
-        <RadioInputDown label="Kaple" name="place" />
+        <RadioInputDown label="Pláž" />
+        <RadioInputDown label="Zahrada" />
+        <RadioInputDown label="Terasa" />
+        <RadioInputDown label="Kaple" />
       </div>
 
       <h3 className="wedding-calculate__title">Cestujete s dětmi</h3>
       <div className="wedding-calculate__question">
-        <RadioInputDown label="Ano" name="question" />
-        <RadioInputDown label="Ne" name="question" />
+        <RadioInputDown label="Ano" />
+        <RadioInputDown label="Ne" />
       </div>
     </form>
   );
