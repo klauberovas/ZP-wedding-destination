@@ -38,3 +38,12 @@ textarea {
 .calculate__field {
   margin-bottom: 1.5rem;
 }
+
+.wedding-ceremony,
+.wedding-package {
+  display: flex;
+}
+
+.ceremony-type {
+  margin-left: 2%;
+}
