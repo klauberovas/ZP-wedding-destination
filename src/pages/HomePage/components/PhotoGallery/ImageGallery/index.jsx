@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import "./style.css";
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import './style.css';
 
 export const ImageGallery = ({ images }) => {
   const [image, setImage] = useState(0);
@@ -33,20 +33,12 @@ export const ImageGallery = ({ images }) => {
           />
         ))}
       </div>
-      <button
-        onClick={showPrevImage}
-        className="img-btn"
-        style={{ left: 0 }}
-      >
+      <button onClick={showPrevImage} className="img-btn" style={{ left: 0 }}>
         <ChevronLeft aria-hidden />
       </button>
-      <button
-        onClick={showNextImage}
-        className="img-btn"
-        style={{ right: 0 }}>
+      <button onClick={showNextImage} className="img-btn" style={{ right: 0 }}>
         <ChevronRight aria-hidden />
       </button>
     </div>
   );
 };
-

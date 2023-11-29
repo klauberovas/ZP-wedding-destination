@@ -1,11 +1,17 @@
-.service-item {
+.checkbox {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 320px;
 }
 
-.service-item__label {
+.checkbox__description {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+}
+
+.checkbox__img {
+  width: 320px;
+  height: 210px;
 }

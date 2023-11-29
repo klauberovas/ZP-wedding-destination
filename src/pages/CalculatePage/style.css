@@ -1,7 +1,4 @@
-.wedding-calculate {
-  padding: 1rem;
-}
-
+/*-----Obecné styly pro form----*/
 label,
 input,
 button,
@@ -18,9 +15,12 @@ textarea {
   padding: 0.5rem;
 }
 
-input,
-select,
 label {
+  display: inline-block;
+}
+
+input,
+select {
   display: block;
 }
 
@@ -30,62 +30,6 @@ label {
 
 input:not([type="radio"]):not([type="checkbox"]),
 select,
-label,
 textarea {
   width: 300px;
-}
-
-.calculate__field {
-  margin-bottom: 1.5rem;
-}
-
-.wedding-ceremony,
-.wedding-package,
-.wedding-services {
-  display: flex;
-}
-
-.ceremony-type {
-  margin-left: 2%;
-}
-
-.wedding-services {
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.wedding-place,
-.wedding-question {
-  display: flex;
-}
-
-.radio-input__type {
-  display: flex;
-  margin: 1%;
-}
-
-.radio-input {
-  margin-left: 5%;
-}
-
-/* Ukazatel total price*/
-
-.wedding-price_display {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  max-width: 200px;
-  background-color: #D9D9D9;
-  border-radius: 20px;
-  position: sticky;
-  top: 0;
-  margin-left: 60%;
-}
-
-.price-total {
-  min-width: 60px;
-  background-color: #DDCC9F;
-  border-radius: 20px;
-  padding: 3%;
-  text-align: end;
 }

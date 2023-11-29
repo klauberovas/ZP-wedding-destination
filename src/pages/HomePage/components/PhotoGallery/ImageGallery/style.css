@@ -4,8 +4,8 @@
 }
 
 .photo {
-    display: flex;
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
 }
 
 .img-gallery {
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.img-btn > * {
+.img-btn>* {
   stroke: rgb(255, 255, 255);
   width: 2rem;
   height: 2rem;
@@ -54,7 +54,7 @@
     flex-wrap: wrap;
   }
 
-  img {
+  .img-gallery {
     max-width: 250px;
     flex-basis: calc(100 / 4);
   }
