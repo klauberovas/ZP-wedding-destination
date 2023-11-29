@@ -1,0 +1,9 @@
+.wedding-calculate {
+  padding: 1rem;
+}
+
+input,
+select,
+label {
+  display: block;
+}
