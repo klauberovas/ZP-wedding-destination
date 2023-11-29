@@ -7,3 +7,12 @@ select,
 label {
   display: block;
 }
+
+.wedding-ceremony,
+.wedding-package {
+  display: flex;
+}
+
+.ceremony-type {
+  margin-left: 2%;
+}
