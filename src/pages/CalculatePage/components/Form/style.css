@@ -31,12 +31,6 @@
   gap: 1rem;
 }
 
-.price-for-service {
-  background-color: var(--background-primary);
-  width: 50%;
-  height: 2rem;
-}
-
 @media (min-width: 450px) {
 
   .wedding-calculate__place,

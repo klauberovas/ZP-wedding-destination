@@ -1,4 +1,5 @@
 import './style.css';
+import { formatPrice } from '../../formatPrice';
 
 export const Checkbox = ({
   label,
@@ -8,15 +9,18 @@ export const Checkbox = ({
   onSelect,
   checked,
   disabled,
+  price,
 }) => {
   return (
-    <label className="service-item__label checkbox__label">
-      <div className="service-item checkbox">
-        <img className="service-item__img checkbox__img" src={image}></img>
-
+    <label className="checkbox__label">
+      <div className="checkbox">
+        <div className="checkbox__container">
+          <img className="checkbox__img" src={image}></img>
+          <div className="checkbox__price">{formatPrice(price)}</div>
+        </div>
         <div className="checkbox__description">
           <input
-            className="service-item__input checkbox__input"
+            className="checkbox__input"
             type="checkbox"
             onChange={onSelect}
             value={value}

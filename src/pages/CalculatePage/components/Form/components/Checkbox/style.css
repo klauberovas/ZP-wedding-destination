@@ -11,7 +11,24 @@
   gap: 0.5rem;
 }
 
-.checkbox__img {
+.checkbox__img,
+.checkbox__container {
   width: 320px;
   height: 210px;
+}
+
+.checkbox__container {
+  position: relative;
+}
+
+.checkbox__price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  text-align: right;
+  background-color: var(--background-primary);
+  width: 30%;
+  padding: 0.5rem;
+  height: 2rem;
 }

@@ -6,6 +6,8 @@ import { Input } from './components/Input';
 import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
 import { Checkbox } from './components/Checkbox';
+import { calculatePrice } from './calculatePrice';
+//import dat
 import {
   listDestinations,
   listCeremony,
@@ -22,7 +24,7 @@ export const Form = () => {
     guests: '',
     nights: '',
     date: '',
-    ceremony: '',
+    ceremony: 'Symbolický obřad',
     package: '',
     services: [],
     place: '',
@@ -62,62 +64,19 @@ export const Form = () => {
     return false;
   };
 
-  const calculatePrice = () => {
-    let totalPrice = 0;
-    if (
-      userData.destination !== '' &&
-      userData.nights !== '' &&
-      userData.guests !== ''
-    ) {
-      let destinationPrice = listDestinations.find(
-        (item) => item.name === userData.destination,
-      ).price;
-      totalPrice +=
-        destinationPrice * Number(userData.nights) * Number(userData.guests);
-    }
-
-    if (userData.ceremony !== '') {
-      let ceremonyPrice = listCeremony.find(
-        (item) => item.name === userData.ceremony,
-      ).price;
-      totalPrice += ceremonyPrice;
-    }
-
-    if (packageType !== '') {
-      let packagePrice = listPackage.find(
-        (item) => item.name === packageType,
-      ).price;
-      totalPrice += packagePrice;
-    }
-
-    if (userData.services.length !== 0) {
-      userData.services.forEach((service) => {
-        let servicePrice = listServices.find(
-          (item) => item.value === service,
-        ).price;
-        totalPrice += servicePrice;
-      });
-    }
-
-    const price = new Intl.NumberFormat('cs-CZ', {
-      style: 'currency',
-      currency: 'CZK',
-      minimumFractionDigits: 0,
-    }).format(totalPrice);
-
-    setTotalPrice(price);
-  };
-
   useEffect(() => {
     console.log(packageType);
     console.log(userData);
 
-    calculatePrice();
+    const price = calculatePrice(userData, packageType);
+    setTotalPrice(price);
   }, [userData, packageType]);
 
   useEffect(() => {
     userData.services = [];
-    calculatePrice();
+
+    const price = calculatePrice(userData, packageType);
+    setTotalPrice(price);
   }, [packageType]);
 
   return (
@@ -158,25 +117,28 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Typ obřadu</h3>
       <div className="wedding-calculate__ceremony">
-        {listCeremony.map(({ name, photo, type }, index) => (
+        {listCeremony.map(({ name, photo, type, price }, index) => (
           <RadioInput
             key={index}
             label={name}
             image={photo}
+            price={price}
             name={type}
             value={name}
             onSelect={handleInputChange}
+            checked={name === userData.ceremony}
           />
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
       <div className="wedding-calculate__packages">
-        {listPackage.map(({ name, photo, type }, index) => (
+        {listPackage.map(({ name, photo, type, price }, index) => (
           <RadioInput
             key={index}
             label={name}
             image={photo}
+            price={price}
             name={type}
             value={name}
             checked={packageType === name}
@@ -187,7 +149,7 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
       <div className="wedding-calculate__services">
-        {listServices.map(({ photo, id, value, label }) => {
+        {listServices.map(({ photo, id, value, label, price }) => {
           {
             return (
               <Checkbox
@@ -196,6 +158,7 @@ export const Form = () => {
                 image={photo}
                 name="services"
                 value={value}
+                price={price}
                 onSelect={handleInputListChange}
                 checked={
                   userData.services.includes(value) || isInPackage(value)

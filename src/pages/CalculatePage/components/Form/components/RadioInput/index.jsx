@@ -1,3 +1,5 @@
+import { formatPrice } from '../../formatPrice';
+
 export const RadioInput = ({
   label,
   image,
@@ -5,11 +7,15 @@ export const RadioInput = ({
   value,
   onSelect,
   checked,
+  price,
 }) => {
   return (
     <label className="checkbox__label">
       <div className="checkbox">
-        <img className="checkbox__img" src={image}></img>
+        <div className="checkbox__container">
+          <img className="checkbox__img" src={image}></img>
+          <div className="checkbox__price">{formatPrice(price)}</div>
+        </div>
         <div className="checkbox__description">
           <input
             className="checkbox__input"
