@@ -28,9 +28,18 @@ import flight from './img/flight.jpg';
 
 export const Form = () => {
   const listDestinations = [
-    { name: 'Maledivy' },
-    { name: 'Mauricius' },
-    { name: 'Dominikánská republika' },
+    {
+      name: 'Maledivy',
+      price: 10000,
+    },
+    {
+      name: 'Mauricius',
+      price: 8000,
+    },
+    {
+      name: 'Dominikánská republika',
+      price: 6000,
+    },
   ];
 
   const listCeremony = [
@@ -44,7 +53,7 @@ export const Form = () => {
       name: 'Symbolický obřad',
       type: 'ceremony',
       photo: symbolic,
-      price: 2000,
+      price: 5000,
     },
   ];
 
@@ -75,35 +84,35 @@ export const Form = () => {
       label: 'Květinová výzdoba, svatební oblouk a kytice pro nevěstu',
       value: 'flowers',
       photo: flowers,
-      price: 1500,
+      price: 2500,
     },
     {
       id: 1,
       label: 'Svatební dort (1-20)',
       value: 'cake',
       photo: cake,
-      price: 1500,
+      price: 3000,
     },
     {
       id: 2,
       label: 'Fotograf',
       value: 'photograph',
       photo: photograph,
-      price: 1500,
+      price: 7500,
     },
     {
       id: 3,
       label: 'Živá hudba / DJ',
       value: 'music',
       photo: dj,
-      price: 1500,
+      price: 15000,
     },
     {
       id: 4,
       label: 'Romantická večeře',
       value: 'romanticDinner',
       photo: dinner,
-      price: 1500,
+      price: 8000,
     },
     {
       id: 5,
@@ -117,35 +126,35 @@ export const Form = () => {
       label: 'Občerstvení a nápoje',
       value: 'foodAndDrinks',
       photo: celebrate,
-      price: 1500,
+      price: 5000,
     },
     {
       id: 7,
       label: 'Ohňostroj',
       value: 'fireworks',
       photo: firework,
-      price: 1500,
+      price: 10000,
     },
     {
       id: 8,
       label: 'Svatební účes a makeup pro nevěstu',
       value: 'makeup',
       photo: makeup,
-      price: 1500,
+      price: 4500,
     },
     {
       id: 9,
       label: 'Plavba při západu slunce',
       value: 'cruise',
       photo: cruise,
-      price: 1500,
+      price: 14000,
     },
     {
       id: 10,
       label: 'Vyhlídkový let',
       value: 'flight',
       photo: flight,
-      price: 1500,
+      price: 12000,
     },
   ];
 
@@ -194,6 +203,8 @@ export const Form = () => {
 
   const [packageType, setPackageType] = useState('Balíček Light');
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevState) => ({
@@ -214,49 +225,57 @@ export const Form = () => {
   };
 
   useEffect(() => {
-    console.log(userData);
     console.log(packageType);
-  }, [userData, packageType]);
-
-  /*
-  const [visibleItems, setVisibleItems] = useState([])
-
-  const handlePackageItems = () => {
-    resetSelectedItems();
-  
-    let checkPackage = [];
-  
-    switch (listServices) {
-      case 'light':
-        checkPackage = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        break;
-      case 'deluxe':
-        checkPackage = [4, 5, 6, 7, 8, 9, 10];
-        break;
-      case 'premium':
-        checkPackage = [9, 10];
-        break;
-      default:
-        checkPackage = [];
+    console.log(userData);
+    let totalPrice = 0;
+    if (
+      userData.destination !== '' &&
+      userData.nights !== '' &&
+      userData.guests !== ''
+    ) {
+      let destinationPrice = listDestinations.find(
+        (item) => item.name === userData.destination,
+      ).price;
+      totalPrice +=
+        destinationPrice * Number(userData.nights) * Number(userData.guests);
     }
-    setVisibleItems(checkPackage);
-  };
 
-  const resetSelectedItems = () => {
-    setListServices((prevData) =>
-      prevData.map((item) => ({ ...item, checked: false }))
-    );
-  };
+    if (userData.ceremony !== '') {
+      let ceremonyPrice = listCeremony.find(
+        (item) => item.name === userData.ceremony,
+      ).price;
+      totalPrice += ceremonyPrice;
+    }
 
-  useEffect(() => {
-    handlePackageItems();
-  }, [listServices]);
-*/
+    if (packageType !== '') {
+      let packagePrice = listPackage.find(
+        (item) => item.name === packageType,
+      ).price;
+      totalPrice += packagePrice;
+    }
+
+    if (userData.services.length !== 0) {
+      userData.services.forEach((service) => {
+        let servicePrice = listServices.find(
+          (item) => item.value === service,
+        ).price;
+        totalPrice += servicePrice;
+      });
+    }
+
+    const price = new Intl.NumberFormat('cs-CZ', {
+      style: 'currency',
+      currency: 'CZK',
+      minimumFractionDigits: 0,
+    }).format(totalPrice);
+
+    setTotalPrice(price);
+  }, [userData, packageType]);
 
   return (
     <form className="wedding-calculate">
       <div className="wedding-price_display">
-        <div className="price-total">0 Kč</div>
+        <div className="price-total">{totalPrice}</div>
       </div>
       <div className="wedding-calculate__inputs">
         <SelectInput
