@@ -7,6 +7,7 @@ import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
 import { Checkbox } from './components/Checkbox';
 import { calculatePrice } from './calculatePrice';
+import { Button } from '../../../../components/Button';
 //import dat
 import {
   listDestinations,
@@ -29,6 +30,12 @@ export const Form = () => {
     services: [],
     place: '',
     children: '',
+    name: '',
+    phoneNumber: '',
+    email: '',
+    typeOfContact: '',
+    agree: false,
+    sendEmail: false,
   });
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -38,6 +45,15 @@ export const Form = () => {
     setUserData((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+    console.log(e.target);
+  };
+
+  const handleInputCheckbox = (e) => {
+    const { name, checked } = e.target;
+    setUserData((prevState) => ({
+      ...prevState,
+      [name]: checked,
     }));
   };
 
@@ -201,6 +217,60 @@ export const Form = () => {
           onSelect={handleInputChange}
         />
       </div>
+
+      <h3>Kontakt</h3>
+      <div className="wedding-contact">
+        <div className="wedding-contact__inputs">
+          <Input
+            onSelect={handleInputChange}
+            className="contact-label"
+            label="Jméno a příjmení"
+            value={userData.name}
+            name="name"
+          />
+          <Input
+            onSelect={handleInputChange}
+            className="contact-label"
+            label="Telefon"
+            value={userData.phoneNumber}
+            name="phoneNumber"
+          />
+          <Input
+            onSelect={handleInputChange}
+            value={userData.email}
+            className="contact-label"
+            label="Email"
+            name="email"
+          />
+          <SelectInput
+            onSelect={handleInputChange}
+            className="contact-label"
+            label="Preferovaný typ kontaktu"
+            name="typeOfContact"
+            data={[{ name: 'Telefon' }, { name: 'Email' }]}
+            value={userData.typeOfContact}
+          />
+        </div>
+      </div>
+      <label>
+        <input
+          type="checkbox"
+          onChange={handleInputCheckbox}
+          name="agree"
+          checked={userData.agree}
+        />
+        Souhlasím se zpracováním osobních údajů
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          onChange={handleInputCheckbox}
+          name="sendEmail"
+          checked={userData.sendEmail}
+        />
+        Přeji si poslat potvrzení emailem
+      </label>
+      <Button label="Mám zájem o tento balíček" />
     </form>
   );
 };

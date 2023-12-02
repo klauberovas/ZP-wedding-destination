@@ -31,6 +31,34 @@
   gap: 1rem;
 }
 
+.wedding-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.wedding-contact__inputs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 50vw;
+}
+
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.message {
+  background-color: #F0F0F0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
 @media (min-width: 450px) {
 
   .wedding-calculate__place,
