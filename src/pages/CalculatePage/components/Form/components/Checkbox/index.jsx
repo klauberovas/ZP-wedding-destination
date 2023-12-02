@@ -1,6 +1,14 @@
 import './style.css';
 
-export const Checkbox = ({ label, image, value, name, onSelect }) => {
+export const Checkbox = ({
+  label,
+  image,
+  value,
+  name,
+  onSelect,
+  checked,
+  disabled,
+}) => {
   return (
     <label className="service-item__label checkbox__label">
       <div className="service-item checkbox">
@@ -13,6 +21,8 @@ export const Checkbox = ({ label, image, value, name, onSelect }) => {
             onChange={onSelect}
             value={value}
             name={name}
+            checked={checked}
+            disabled={disabled}
           />
           {label}
         </div>

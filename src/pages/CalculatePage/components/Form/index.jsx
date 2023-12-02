@@ -224,9 +224,17 @@ export const Form = () => {
     }));
   };
 
-  useEffect(() => {
-    console.log(packageType);
-    console.log(userData);
+  const isInPackage = (value) => {
+    if (packageType === 'Balíček Delux' && packageDeluxe.includes(value)) {
+      return true;
+    }
+    if (packageType === 'Balíček Premium' && packagePremium.includes(value)) {
+      return true;
+    }
+    return false;
+  };
+
+  const calculatePrice = () => {
     let totalPrice = 0;
     if (
       userData.destination !== '' &&
@@ -270,7 +278,19 @@ export const Form = () => {
     }).format(totalPrice);
 
     setTotalPrice(price);
+  };
+
+  useEffect(() => {
+    console.log(packageType);
+    console.log(userData);
+
+    calculatePrice();
   }, [userData, packageType]);
+
+  useEffect(() => {
+    userData.services = [];
+    calculatePrice();
+  }, [packageType]);
 
   return (
     <form className="wedding-calculate">
@@ -340,13 +360,7 @@ export const Form = () => {
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
       <div className="wedding-calculate__services">
         {listServices.map(({ photo, id, value, label }) => {
-          if (
-            (packageType === 'Balíček Delux' &&
-              !packageDeluxe.includes(value)) ||
-            (packageType === 'Balíček Premium' &&
-              !packagePremium.includes(value)) ||
-            packageType === 'Balíček Light'
-          ) {
+          {
             return (
               <Checkbox
                 key={id}
@@ -355,7 +369,10 @@ export const Form = () => {
                 name="services"
                 value={value}
                 onSelect={handleInputListChange}
-                checked={userData.services.includes(value)}
+                checked={
+                  userData.services.includes(value) || isInPackage(value)
+                }
+                disabled={isInPackage(value)}
               />
             );
           }
