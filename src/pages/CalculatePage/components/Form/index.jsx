@@ -94,28 +94,28 @@ export const Form = () => {
     {
       id: 3,
       label: 'Živá hudba / DJ',
-      value: 'music/DJ',
+      value: 'music',
       photo: dj,
       price: 1500,
     },
     {
       id: 4,
       label: 'Romantická večeře',
-      value: 'romantic dinner',
+      value: 'romanticDinner',
       photo: dinner,
       price: 1500,
     },
     {
       id: 5,
       label: 'Církevní obřad',
-      value: 'church ceremony',
+      value: 'churchCeremony',
       photo: church,
       price: 1500,
     },
     {
       id: 6,
       label: 'Občerstvení a nápoje',
-      value: 'food and drinks',
+      value: 'foodAndDrinks',
       photo: celebrate,
       price: 1500,
     },
@@ -129,7 +129,7 @@ export const Form = () => {
     {
       id: 8,
       label: 'Svatební účes a makeup pro nevěstu',
-      value: 'Makeup',
+      value: 'makeup',
       photo: makeup,
       price: 1500,
     },
@@ -168,6 +168,18 @@ export const Form = () => {
     },
   ];
 
+  const packageDeluxe = ['flowers', 'cake', 'photograph', 'music'];
+
+  const packagePremium = [
+    ...packageDeluxe,
+    'romanticDinner',
+    'churchCeremony',
+    'foodAndDrinks',
+    'fireworks',
+    'makeup',
+    'cruise',
+  ];
+
   const [userData, setUserData] = useState({
     destination: '',
     guests: '',
@@ -179,6 +191,8 @@ export const Form = () => {
     place: '',
     children: '',
   });
+
+  const [packageType, setPackageType] = useState('Balíček Light');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -201,7 +215,8 @@ export const Form = () => {
 
   useEffect(() => {
     console.log(userData);
-  }, [userData]);
+    console.log(packageType);
+  }, [userData, packageType]);
 
   /*
   const [visibleItems, setVisibleItems] = useState([])
@@ -297,24 +312,35 @@ export const Form = () => {
             image={photo}
             name={type}
             value={name}
-            onSelect={handleInputChange}
+            checked={packageType === name}
+            onSelect={() => setPackageType(name)}
           />
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
       <div className="wedding-calculate__services">
-        {listServices.map(({ photo, id, value, label }) => (
-          <Checkbox
-            key={id}
-            label={label}
-            image={photo}
-            name="services"
-            value={value}
-            onSelect={handleInputListChange}
-            checked={userData.services.includes(value)}
-          />
-        ))}
+        {listServices.map(({ photo, id, value, label }) => {
+          if (
+            (packageType === 'Balíček Delux' &&
+              !packageDeluxe.includes(value)) ||
+            (packageType === 'Balíček Premium' &&
+              !packagePremium.includes(value)) ||
+            packageType === 'Balíček Light'
+          ) {
+            return (
+              <Checkbox
+                key={id}
+                label={label}
+                image={photo}
+                name="services"
+                value={value}
+                onSelect={handleInputListChange}
+                checked={userData.services.includes(value)}
+              />
+            );
+          }
+        })}
       </div>
 
       <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
