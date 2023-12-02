@@ -1,9 +1,9 @@
-export const SelectInput = ({ data, label }) => {
+export const SelectInput = ({ data, label, name, value, onSelect }) => {
   return (
     <div className="field">
       <label className="field__label">
         {label}
-        <select>
+        <select onChange={onSelect} name={name} value={value}>
           <Option data={data} />
         </select>
       </label>

@@ -1,5 +1,5 @@
 import './style.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import komponent
 import { SelectInput } from './components/SelectInput';
 import { Input } from './components/Input';
@@ -69,85 +69,96 @@ export const Form = () => {
     },
   ];
 
-  const listServices = [
+  const [listServices, setListServices] = useState([
     {
       id: 0,
-      name: 'Květinová výzdoba, svatební oblouk a kytice pro nevěstu',
+      label: 'Květinová výzdoba, svatební oblouk a kytice pro nevěstu',
+      value: 'Květinová výzdoba',
       photo: flowers,
       price: 1500,
       checked: false,
     },
     {
       id: 1,
-      name: 'Svatební dort (1-20)',
+      label: 'Svatební dort (1-20)',
+      value: 'Svatební dort',
       photo: cake,
       price: 1500,
       checked: false,
     },
     {
       id: 2,
-      name: 'Fotograf',
+      label: 'Fotograf',
+      value: 'Fotograf',
       photo: photograph,
       price: 1500,
       checked: false,
     },
     {
       id: 3,
-      name: 'Živá hudba / DJ',
+      label: 'Živá hudba / DJ',
+      value: 'Hudba',
       photo: dj,
       price: 1500,
       checked: false,
     },
     {
       id: 4,
-      name: 'Romantická večeře',
+      label: 'Romantická večeře',
+      value: 'Romantická večeře',
       photo: dinner,
       price: 1500,
       checked: false,
     },
     {
       id: 5,
-      name: 'Církevní obřad',
+      label: 'Církevní obřad',
+      value: 'Církevní obřad',
       photo: church,
       price: 1500,
       checked: false,
     },
     {
       id: 6,
-      name: 'Občerstvení a nápoje',
+      label: 'Občerstvení a nápoje',
+      value: 'Občerstvení a nápoje',
       photo: celebrate,
       price: 1500,
       checked: false,
     },
     {
       id: 7,
-      name: 'Ohňostroj',
+      label: 'Ohňostroj',
+      value: 'Ohňostroj',
       photo: firework,
       price: 1500,
       checked: false,
     },
     {
       id: 8,
-      name: 'Svatební účes a makeup pro nevěstu',
+      label: 'Svatební účes a makeup pro nevěstu',
+      value: 'Makeup',
       photo: makeup,
       price: 1500,
       checked: false,
     },
     {
       id: 9,
-      name: 'Plavba přo západu slunce',
+      label: 'Plavba při západu slunce',
+      value: 'Plavba',
       photo: cruise,
       price: 1500,
       checked: false,
     },
     {
       id: 10,
-      name: 'Vyhlídkový let',
+      label: 'Vyhlídkový let',
+      value: 'Let',
       photo: flight,
       price: 1500,
       checked: false,
     },
-  ];
+  ]);
 
   const listPlaces = [
     {
@@ -168,6 +179,75 @@ export const Form = () => {
     },
   ];
 
+const [userData, setUserData] = useState({
+  destination: '',
+  guests: '',
+  nights: '',
+  date: '',
+  ceremony: '',
+  package: '',
+  services: [],
+  place: '',
+  children: '',
+});
+
+const handleInputChange = (e) => {
+  const { name, value } = e.target; setUserData((prevState) => ({
+    ...prevState,
+    [name]: value,
+  }));
+};
+
+const handleInputListChange = (e) => {
+  const { name, value, checked } = e.target;
+  setUserData((prevState) => ({
+    ...prevState,
+    [name]: checked
+      ? [...prevState[name], value]
+      : // vyfiltruje jen ty co se nerovnají value
+        prevState[name].filter((item) => item !== value),
+  }));
+};
+
+useEffect(() => {
+  console.log(userData)
+}, [userData]);
+
+  /*
+  const [visibleItems, setVisibleItems] = useState([])
+
+  const handlePackageItems = () => {
+    resetSelectedItems();
+  
+    let checkPackage = [];
+  
+    switch (listServices) {
+      case 'light':
+        checkPackage = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        break;
+      case 'deluxe':
+        checkPackage = [4, 5, 6, 7, 8, 9, 10];
+        break;
+      case 'premium':
+        checkPackage = [9, 10];
+        break;
+      default:
+        checkPackage = [];
+    }
+    setVisibleItems(checkPackage);
+  };
+
+  const resetSelectedItems = () => {
+    setListServices((prevData) =>
+      prevData.map((item) => ({ ...item, checked: false }))
+    );
+  };
+
+  useEffect(() => {
+    handlePackageItems();
+  }, [listServices]);
+*/ 
+
   return (
     <form className="wedding-calculate">
       <div className="wedding-price_display">
@@ -178,47 +258,56 @@ export const Form = () => {
           data={listDestinations}
           label="Destinace"
           name="destination"
+          value={userData.destination}
+          onSelect={handleInputChange}
         />
-        <Input label="Počet hostů" type="number" />
-        <Input label="Počet nocí" type="number" />
-        <Input label="Odlet nejdříve" type="date" />
+        <Input label="Počet hostů" type="number" value={userData.guests}
+          onSelect={handleInputChange}/>
+        <Input label="Počet nocí" type="number" value={userData.nights}
+          onSelect={handleInputChange}/>
+        <Input label="Odlet nejdříve" type="date" value={userData.date}
+          onSelect={handleInputChange} />
       </div>
 
       <h3 className="wedding-calculate__title">Typ obřadu</h3>
       <div className="wedding-calculate__ceremony">
         {listCeremony.map(({ name, photo, type }, index) => (
-          <RadioInput key={index} label={name} image={photo} name={type} />
+          <RadioInput key={index} label={name} image={photo} name={type} value={name}
+          onSelect={handleInputChange}/>
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
       <div className="wedding-calculate__packages">
         {listPackage.map(({ name, photo, type }, index) => (
-          <RadioInput key={index} label={name} image={photo} name={type} />
+          <RadioInput key={index} label={name} image={photo} name={type} value={name}
+          onSelect={handleInputChange} />
         ))}
-        <RadioInput label="Balíček Light" image={light} />
-        <RadioInput label="Balíček Delux" image={deluxe} />
-        <RadioInput label="Balíček Premium" image={premium} />
       </div>
 
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
       <div className="wedding-calculate__services">
-        {listServices.map(({ label, photo, id }) => (
-          <Checkbox key={id} label={label} image={photo} />
+        {listServices.map(({ photo, id, value, label }) => (
+          <Checkbox key={id} label={label} image={photo} name="services"
+          value={value} onSelect={handleInputListChange} 
+          checked={userData.services.includes(value)}/>
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
       <div className="wedding-calculate__place">
         {listPlaces.map(({ name, type }, index) => (
-          <RadioInputDown key={index} label={name} name={type} value={name} />
+          <RadioInputDown key={index} label={name} name={type} value={name}
+          onSelect={handleInputChange}/>
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Cestujete s dětmi</h3>
       <div className="wedding-calculate__question">
-        <RadioInputDown label="Ano" />
-        <RadioInputDown label="Ne" />
+        <RadioInputDown label="Ano" value="Ano"
+          onSelect={handleInputChange}/>
+        <RadioInputDown label="Ne" value="Ne"
+          onSelect={handleInputChange}/>
       </div>
     </form>
   );
