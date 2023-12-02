@@ -73,66 +73,58 @@ export const Form = () => {
     {
       id: 0,
       label: 'Květinová výzdoba, svatební oblouk a kytice pro nevěstu',
-      value: 'Květinová výzdoba',
+      value: 'flowers',
       photo: flowers,
       price: 1500,
-      checked: false,
     },
     {
       id: 1,
       label: 'Svatební dort (1-20)',
-      value: 'Svatební dort',
+      value: 'cake',
       photo: cake,
       price: 1500,
-      checked: false,
     },
     {
       id: 2,
       label: 'Fotograf',
-      value: 'Fotograf',
+      value: 'photograph',
       photo: photograph,
       price: 1500,
-      checked: false,
     },
     {
       id: 3,
       label: 'Živá hudba / DJ',
-      value: 'Hudba',
+      value: 'music/DJ',
       photo: dj,
       price: 1500,
-      checked: false,
     },
     {
       id: 4,
       label: 'Romantická večeře',
-      value: 'Romantická večeře',
+      value: 'romantic dinner',
       photo: dinner,
       price: 1500,
-      checked: false,
     },
     {
       id: 5,
       label: 'Církevní obřad',
-      value: 'Církevní obřad',
+      value: 'church ceremony',
       photo: church,
       price: 1500,
-      checked: false,
     },
     {
       id: 6,
       label: 'Občerstvení a nápoje',
-      value: 'Občerstvení a nápoje',
+      value: 'food and drinks',
       photo: celebrate,
       price: 1500,
-      checked: false,
     },
     {
       id: 7,
       label: 'Ohňostroj',
-      value: 'Ohňostroj',
+      value: 'fireworks',
       photo: firework,
       price: 1500,
-      checked: false,
     },
     {
       id: 8,
@@ -140,23 +132,20 @@ export const Form = () => {
       value: 'Makeup',
       photo: makeup,
       price: 1500,
-      checked: false,
     },
     {
       id: 9,
       label: 'Plavba při západu slunce',
-      value: 'Plavba',
+      value: 'cruise',
       photo: cruise,
       price: 1500,
-      checked: false,
     },
     {
       id: 10,
       label: 'Vyhlídkový let',
-      value: 'Let',
+      value: 'flight',
       photo: flight,
       price: 1500,
-      checked: false,
     },
   ];
 
@@ -265,18 +254,21 @@ export const Form = () => {
         <Input
           label="Počet hostů"
           type="number"
+          name="guests"
           value={userData.guests}
           onSelect={handleInputChange}
         />
         <Input
           label="Počet nocí"
           type="number"
+          name="nights"
           value={userData.nights}
           onSelect={handleInputChange}
         />
         <Input
           label="Odlet nejdříve"
           type="date"
+          name="date"
           value={userData.date}
           onSelect={handleInputChange}
         />
@@ -340,8 +332,18 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Cestujete s dětmi</h3>
       <div className="wedding-calculate__question">
-        <RadioInputDown label="Ano" value="Ano" onSelect={handleInputChange} />
-        <RadioInputDown label="Ne" value="Ne" onSelect={handleInputChange} />
+        <RadioInputDown
+          label="Ano"
+          name="children"
+          value="Ano"
+          onSelect={handleInputChange}
+        />
+        <RadioInputDown
+          label="Ne"
+          name="children"
+          value="Ne"
+          onSelect={handleInputChange}
+        />
       </div>
     </form>
   );
