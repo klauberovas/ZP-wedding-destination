@@ -1,12 +1,27 @@
-export const RadioInput = ({ label, image, name, value, onSelect }) => {
+export const RadioInput = ({
+  label,
+  image,
+  name,
+  value,
+  onSelect,
+  checked,
+}) => {
   return (
-    <div className="checkbox">
-      <img className="checkbox__img" src={image}></img>
-      <div className="checkbox__description">
-        <input className="checkbox__input" type="radio" name={name} 
-        value={value} onChange={onSelect}/>
-        <label className="checkbox__label">{label}</label>
+    <label className="checkbox__label">
+      <div className="checkbox">
+        <img className="checkbox__img" src={image}></img>
+        <div className="checkbox__description">
+          <input
+            className="checkbox__input"
+            type="radio"
+            name={name}
+            value={value}
+            onChange={onSelect}
+            checked={checked}
+          />
+          {label}
+        </div>
       </div>
-    </div>
+    </label>
   );
 };
