@@ -6,7 +6,7 @@ import {
   listServices,
 } from './data';
 
-export const calculatePrice = (userData, packageType) => {
+export const calculatePrice = (userData) => {
   let totalPrice = 0;
   if (
     userData.destination !== '' &&
@@ -27,9 +27,9 @@ export const calculatePrice = (userData, packageType) => {
     totalPrice += ceremonyPrice;
   }
 
-  if (packageType !== '') {
+  if (userData.package !== '') {
     let packagePrice = listPackage.find(
-      (item) => item.name === packageType,
+      (item) => item.name === userData.package,
     ).price;
     totalPrice += packagePrice;
   }

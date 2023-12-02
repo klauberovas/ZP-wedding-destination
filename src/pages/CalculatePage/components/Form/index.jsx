@@ -25,13 +25,11 @@ export const Form = () => {
     nights: '',
     date: '',
     ceremony: 'Symbolický obřad',
-    package: '',
+    package: 'Balíček Light',
     services: [],
     place: '',
     children: '',
   });
-
-  const [packageType, setPackageType] = useState('Balíček Light');
 
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -55,29 +53,31 @@ export const Form = () => {
   };
 
   const isInPackage = (value) => {
-    if (packageType === 'Balíček Delux' && packageDeluxe.includes(value)) {
+    if (userData.package === 'Balíček Delux' && packageDeluxe.includes(value)) {
       return true;
     }
-    if (packageType === 'Balíček Premium' && packagePremium.includes(value)) {
+    if (
+      userData.package === 'Balíček Premium' &&
+      packagePremium.includes(value)
+    ) {
       return true;
     }
     return false;
   };
 
+  const resetServices = () => {
+    setUserData((prevState) => ({
+      ...prevState,
+      services: [],
+    }));
+  };
+
   useEffect(() => {
-    console.log(packageType);
     console.log(userData);
 
-    const price = calculatePrice(userData, packageType);
+    const price = calculatePrice(userData);
     setTotalPrice(price);
-  }, [userData, packageType]);
-
-  useEffect(() => {
-    userData.services = [];
-
-    const price = calculatePrice(userData, packageType);
-    setTotalPrice(price);
-  }, [packageType]);
+  }, [userData]);
 
   return (
     <form className="wedding-calculate">
@@ -141,8 +141,11 @@ export const Form = () => {
             price={price}
             name={type}
             value={name}
-            checked={packageType === name}
-            onSelect={() => setPackageType(name)}
+            checked={userData.package === name}
+            onSelect={(e) => {
+              handleInputChange(e);
+              resetServices();
+            }}
           />
         ))}
       </div>
