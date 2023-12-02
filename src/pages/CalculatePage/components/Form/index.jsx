@@ -27,97 +27,146 @@ import cruise from './img/cruise.jpg';
 import flight from './img/flight.jpg';
 
 export const Form = () => {
-  const [data, setData] = useState([
+  const listDestinations = [
+    { name: 'Maledivy' },
+    { name: 'Mauricius' },
+    { name: 'Dominikánská republika' },
+  ];
+
+  const listCeremony = [
+    {
+      name: 'Oficiální obřad',
+      photo: official,
+      type: 'ceremony',
+      price: 17000,
+    },
+    {
+      name: 'Symbolický obřad',
+      type: 'ceremony',
+      photo: symbolic,
+      price: 2000,
+    },
+  ];
+
+  const listPackage = [
+    {
+      name: 'Balíček Light',
+      type: 'package',
+      photo: light,
+      price: 20000,
+    },
+    {
+      name: 'Balíček Delux',
+      type: 'package',
+      photo: deluxe,
+      price: 30000,
+    },
+    {
+      name: 'Balíček Premium',
+      type: 'package',
+      photo: premium,
+      price: 45000,
+    },
+  ];
+
+  const listServices = [
     {
       id: 0,
-      label:
-        'Květinová výzdoba, včetně svatebního oblouku a kytice pro nevěstu',
+      name: 'Květinová výzdoba, svatební oblouk a kytice pro nevěstu',
       photo: flowers,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 1,
-      label: 'Svatební dort (1-20)',
+      name: 'Svatební dort (1-20)',
       photo: cake,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 2,
-      label: 'Fotograf',
+      name: 'Fotograf',
       photo: photograph,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 3,
-      label: 'Živá hudba / DJ',
+      name: 'Živá hudba / DJ',
       photo: dj,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 4,
-      label: 'Romantická večeře',
+      name: 'Romantická večeře',
       photo: dinner,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 5,
-      label: 'Církevní obřad',
+      name: 'Církevní obřad',
       photo: church,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 6,
-      label: 'Občerstvení a nápoje',
+      name: 'Občerstvení a nápoje',
       photo: celebrate,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 7,
-      label: 'Ohňostroj',
+      name: 'Ohňostroj',
       photo: firework,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 8,
-      label: 'Svatební účes a makeup pro nevěstu',
+      name: 'Svatební účes a makeup pro nevěstu',
       photo: makeup,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 9,
-      label: 'Plavba přo západu slunce',
+      name: 'Plavba přo západu slunce',
       photo: cruise,
-      name: '',
       price: 1500,
       checked: false,
     },
     {
       id: 10,
-      label: 'Vyhlídkový let',
+      name: 'Vyhlídkový let',
       photo: flight,
-      name: '',
       price: 1500,
       checked: false,
     },
-  ]);
+  ];
+
+  const listPlaces = [
+    {
+      name: 'Pláž',
+      type: 'place',
+    },
+    {
+      name: 'Zahrada',
+      type: 'place',
+    },
+    {
+      name: 'Terasa',
+      type: 'place',
+    },
+    {
+      name: 'Kaple',
+      type: 'place',
+    },
+  ];
 
   return (
     <form className="wedding-calculate">
@@ -126,8 +175,9 @@ export const Form = () => {
       </div>
       <div className="wedding-calculate__inputs">
         <SelectInput
-          data={['Maledivy', 'Dominikánská republika', 'Mauricus']}
+          data={listDestinations}
           label="Destinace"
+          name="destination"
         />
         <Input label="Počet hostů" type="number" />
         <Input label="Počet nocí" type="number" />
@@ -136,12 +186,16 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Typ obřadu</h3>
       <div className="wedding-calculate__ceremony">
-        <RadioInput label="Oficiální" image={official} name="ceremony" />
-        <RadioInput label="Symbolický" image={symbolic} name="ceremony" />
+        {listCeremony.map(({ name, photo, type }, index) => (
+          <RadioInput key={index} label={name} image={photo} name={type} />
+        ))}
       </div>
 
-      <h3 className="wedding-calculate__title">Typ svatebního obřadu</h3>
+      <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
       <div className="wedding-calculate__packages">
+        {listPackage.map(({ name, photo, type }, index) => (
+          <RadioInput key={index} label={name} image={photo} name={type} />
+        ))}
         <RadioInput label="Balíček Light" image={light} />
         <RadioInput label="Balíček Delux" image={deluxe} />
         <RadioInput label="Balíček Premium" image={premium} />
@@ -149,17 +203,16 @@ export const Form = () => {
 
       <h3 className="wedding-calculate__title">Doplňkové služby</h3>
       <div className="wedding-calculate__services">
-        {data.map(({ label, photo, id }) => (
+        {listServices.map(({ label, photo, id }) => (
           <Checkbox key={id} label={label} image={photo} />
         ))}
       </div>
 
       <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
       <div className="wedding-calculate__place">
-        <RadioInputDown label="Pláž" />
-        <RadioInputDown label="Zahrada" />
-        <RadioInputDown label="Terasa" />
-        <RadioInputDown label="Kaple" />
+        {listPlaces.map(({ name, type }, index) => (
+          <RadioInputDown key={index} label={name} name={type} value={name} />
+        ))}
       </div>
 
       <h3 className="wedding-calculate__title">Cestujete s dětmi</h3>
