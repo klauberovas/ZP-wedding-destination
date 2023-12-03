@@ -1,4 +1,5 @@
 import './style.css';
+import { useForm, FormProvider } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 //import komponent
 import { SelectInput } from './components/SelectInput';
@@ -21,6 +22,16 @@ import {
 } from './data';
 
 export const Form = () => {
+  const methods = useForm({
+    defaultValues: { ceremony: 'Symbolický obřad', package: 'Balíček Light' },
+  });
+
+  const errors = methods.formState.errors;
+
+  useEffect(() => {
+    console.log(errors);
+  });
+
   const [userData, setUserData] = useState({
     destination: '',
     guests: '',
@@ -41,34 +52,6 @@ export const Form = () => {
   });
 
   const [totalPrice, setTotalPrice] = useState(0);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUserData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    console.log(e.target);
-  };
-
-  const handleInputCheckbox = (e) => {
-    const { name, checked } = e.target;
-    setUserData((prevState) => ({
-      ...prevState,
-      [name]: checked,
-    }));
-  };
-
-  const handleInputListChange = (e) => {
-    const { name, value, checked } = e.target;
-    setUserData((prevState) => ({
-      ...prevState,
-      [name]: checked
-        ? [...prevState[name], value]
-        : // vyfiltruje jen ty co se nerovnají value
-          prevState[name].filter((item) => item !== value),
-    }));
-  };
 
   const isInPackage = (value) => {
     if (userData.package === 'Balíček Delux' && packageDeluxe.includes(value)) {
@@ -97,184 +80,131 @@ export const Form = () => {
     setTotalPrice(price);
   }, [userData]);
 
+  //fce onSubmit
+  const onSubmit = (data) => console.log(data);
+
   return (
-    <form className="wedding-calculate">
-      <div className="wedding-price_display">
-        <div className="price-total">{totalPrice}</div>
-      </div>
-      <div className="wedding-calculate__inputs">
-        <SelectInput
-          data={listDestinations}
-          label="Destinace *"
-          name="destination"
-          value={userData.destination}
-          onSelect={handleInputChange}
-        />
-        <Input
-          label="Počet hostů *"
-          type="number"
-          name="guests"
-          min="0"
-          value={userData.guests}
-          onSelect={handleInputChange}
-        />
-        <Input
-          label="Počet nocí *"
-          type="number"
-          name="nights"
-          min="0"
-          value={userData.nights}
-          onSelect={handleInputChange}
-        />
-        <Input
-          label="Odlet nejdříve *"
-          type="date"
-          name="date"
-          value={userData.date}
-          onSelect={handleInputChange}
-        />
-      </div>
-
-      <h3 className="wedding-calculate__title">Typ obřadu</h3>
-      <div className="wedding-calculate__ceremony">
-        {listCeremony.map(({ name, photo, type, price }, index) => (
-          <RadioInput
-            key={index}
-            label={name}
-            image={photo}
-            price={price}
-            name={type}
-            value={name}
-            onSelect={handleInputChange}
-            checked={name === userData.ceremony}
-          />
-        ))}
-      </div>
-
-      <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
-      <div className="wedding-calculate__packages">
-        {listPackage.map(({ name, photo, type, price }, index) => (
-          <RadioInput
-            key={index}
-            label={name}
-            image={photo}
-            price={price}
-            name={type}
-            value={name}
-            checked={userData.package === name}
-            onSelect={(e) => {
-              handleInputChange(e);
-              resetServices();
-            }}
-          />
-        ))}
-      </div>
-
-      <h3 className="wedding-calculate__title">Doplňkové služby</h3>
-      <div className="wedding-calculate__services">
-        {listServices.map(({ photo, id, value, label, price }) => {
-          {
-            return (
-              <CheckboxWithImg
-                key={id}
-                label={label}
-                image={photo}
-                name="services"
-                value={value}
-                price={price}
-                onSelect={handleInputListChange}
-                checked={
-                  userData.services.includes(value) || isInPackage(value)
-                }
-                disabled={isInPackage(value)}
-              />
-            );
-          }
-        })}
-      </div>
-
-      <h3 className="wedding-calculate__title">Místo svatebního obřadu *</h3>
-      <div className="wedding-calculate__place">
-        {listPlaces.map(({ name, type }, index) => (
-          <RadioInputDown
-            key={index}
-            label={name}
-            name={type}
-            value={name}
-            onSelect={handleInputChange}
-          />
-        ))}
-      </div>
-
-      <h3 className="wedding-calculate__title">Cestujete s dětmi? *</h3>
-      <div className="wedding-calculate__question">
-        <RadioInputDown
-          label="Ano"
-          name="children"
-          value="Ano"
-          onSelect={handleInputChange}
-        />
-        <RadioInputDown
-          label="Ne"
-          name="children"
-          value="Ne"
-          onSelect={handleInputChange}
-        />
-      </div>
-
-      <h3>Kontakt</h3>
-      <div className="wedding-contact">
-        <div className="wedding-contact__inputs">
-          <Input
-            onSelect={handleInputChange}
-            className="contact-label"
-            label="Jméno *"
-            value={userData.name}
-            name="name"
-            type="text"
-          />
-          <Input
-            onSelect={handleInputChange}
-            className="contact-label"
-            label="Příjmení *"
-            value={userData.lastname}
-            name="lastname"
-            type="text"
-          />
-          <Input
-            onSelect={handleInputChange}
-            className="contact-label"
-            label="Telefon"
-            value={userData.phoneNumber}
-            name="phoneNumber"
-            type="tel"
-            pattern="[0-9]{9}"
-          />
-          <Input
-            onSelect={handleInputChange}
-            value={userData.email}
-            className="contact-label"
-            label="Email *"
-            name="email"
-            type="email"
-          />
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="wedding-calculate"
+      >
+        <div className="wedding-price_display">
+          <div className="price-total">{totalPrice}</div>
         </div>
-      </div>
-      <Checkbox
-        onSelect={handleInputCheckbox}
-        name="agree"
-        text="Souhlasím se zpracováním osobních údajů *"
-        checked={userData.agree}
-        required={true}
-      />
-      <Checkbox
-        onSelect={handleInputCheckbox}
-        name="sendEmail"
-        text="Přeji si poslat potvrzení emailem"
-        checked={userData.sendEmail}
-      />
+        <div className="wedding-calculate__inputs">
+          <SelectInput
+            data={listDestinations}
+            label="Destinace *"
+            name="destination"
+          />
+          <Input label="Počet hostů *" type="number" name="guests" min="0" />
+          <Input label="Počet nocí *" type="number" name="nights" min="0" />
+          <Input label="Odlet nejdříve *" type="date" name="date" />
+        </div>
 
-      <Button label="Mám zájem o tento balíček" />
-    </form>
+        <h3 className="wedding-calculate__title">Typ obřadu</h3>
+        <div className="wedding-calculate__ceremony">
+          {listCeremony.map(({ name, photo, type, price }, index) => (
+            <RadioInput
+              key={index}
+              label={name}
+              image={photo}
+              price={price}
+              name={type}
+              value={name}
+            />
+          ))}
+        </div>
+
+        <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
+        <div className="wedding-calculate__packages">
+          {listPackage.map(({ name, photo, type, price }, index) => (
+            <RadioInput
+              key={index}
+              label={name}
+              image={photo}
+              price={price}
+              name={type}
+              value={name}
+            />
+          ))}
+        </div>
+
+        <h3 className="wedding-calculate__title">Doplňkové služby</h3>
+        <div className="wedding-calculate__services">
+          {listServices.map(({ photo, id, value, label, price }) => {
+            {
+              return (
+                <CheckboxWithImg
+                  key={id}
+                  label={label}
+                  image={photo}
+                  name="services"
+                  value={value}
+                  price={price}
+                  // checked={
+                  //   userData.services.includes(value) || isInPackage(value)
+                  // }
+                  disabled={isInPackage(value)}
+                />
+              );
+            }
+          })}
+        </div>
+
+        <h3 className="wedding-calculate__title">Místo svatebního obřadu *</h3>
+        <div className="wedding-calculate__place">
+          {listPlaces.map(({ name, type }, index) => (
+            <RadioInputDown key={index} label={name} name={type} value={name} />
+          ))}
+        </div>
+
+        <h3 className="wedding-calculate__title">Cestujete s dětmi? *</h3>
+        <div className="wedding-calculate__question">
+          <RadioInputDown label="Ano" name="children" value="Ano" />
+          <RadioInputDown label="Ne" name="children" value="Ne" />
+        </div>
+
+        <h3>Kontakt</h3>
+        <div className="wedding-contact">
+          <div className="wedding-contact__inputs">
+            <Input
+              className="contact-label"
+              label="Jméno *"
+              name="name"
+              type="text"
+            />
+            <Input
+              className="contact-label"
+              label="Příjmení *"
+              name="lastname"
+              type="text"
+            />
+            <Input
+              className="contact-label"
+              label="Telefon"
+              name="phoneNumber"
+              type="tel"
+              pattern="[0-9]{9}"
+            />
+            <Input
+              className="contact-label"
+              label="Email *"
+              name="email"
+              type="email"
+            />
+          </div>
+        </div>
+        <Checkbox
+          name="agree"
+          text="Souhlasím se zpracováním osobních údajů *"
+          required={true}
+        />
+        <Checkbox name="sendEmail" text="Přeji si poslat potvrzení emailem" />
+
+        <Button label="Mám zájem o tento balíček" />
+      </form>
+    </FormProvider>
   );
 };
