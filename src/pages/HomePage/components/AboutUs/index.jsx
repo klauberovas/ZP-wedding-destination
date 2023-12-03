@@ -6,7 +6,16 @@ export const AboutUs = () => {
     <section className="about-us">
       <Title label="Proč s námi?" />
       <div className="container-flex">
-        <div className="container-flex__item about-us__img right-corner hidden"></div>
+        <div className="container-flex__item about-us__img right-corner hidden">
+          <div className="about-us__label hidden">
+            <p>
+              od <span className="about-us__large">2015</span>
+            </p>
+            <p>
+              <span className="about-us__large">6.500</span> +
+            </p>
+          </div>
+        </div>
         <div className="container-flex__item about-us__text">
           <p>
             Jsme cestovní agentura specializující se na zprostředkování svateb v
@@ -23,14 +32,6 @@ export const AboutUs = () => {
             uspořádání vaší svatby a postárá se o vás a vaše hosty.
           </p>
         </div>
-      </div>
-      <div className="about-us__label hidden">
-        <p>
-          od <span className="about-us__large">2015</span>
-        </p>
-        <p>
-          <span className="about-us__large">6.500</span> +
-        </p>
       </div>
     </section>
   );

@@ -43,7 +43,8 @@
     padding: 0.5rem;
 
     position: absolute;
-    bottom: -5%;
+    right: -5%;
+    bottom: -6%;
     left: calc(100% / 3);
   }
 
