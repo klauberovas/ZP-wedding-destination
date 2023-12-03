@@ -27,40 +27,19 @@ export const Form = () => {
   });
 
   const errors = methods.formState.errors;
+  const watch = methods.watch();
 
   useEffect(() => {
     console.log(errors);
-  });
-
-  const [userData, setUserData] = useState({
-    destination: '',
-    guests: '',
-    nights: '',
-    date: '',
-    ceremony: 'Symbolický obřad',
-    package: 'Balíček Light',
-    services: [],
-    place: '',
-    children: '',
-    name: '',
-    lastname: '',
-    phoneNumber: '',
-    email: '',
-    typeOfContact: '',
-    agree: false,
-    sendEmail: false,
-  });
+  }, [errors]);
 
   const [totalPrice, setTotalPrice] = useState(0);
 
   const isInPackage = (value) => {
-    if (userData.package === 'Balíček Delux' && packageDeluxe.includes(value)) {
+    if (watch.package === 'Balíček Delux' && packageDeluxe.includes(value)) {
       return true;
     }
-    if (
-      userData.package === 'Balíček Premium' &&
-      packagePremium.includes(value)
-    ) {
+    if (watch.package === 'Balíček Premium' && packagePremium.includes(value)) {
       return true;
     }
     return false;
@@ -74,11 +53,11 @@ export const Form = () => {
   };
 
   useEffect(() => {
-    console.log(userData);
+    console.log(watch);
 
-    const price = calculatePrice(userData);
+    const price = calculatePrice(watch);
     setTotalPrice(price);
-  }, [userData]);
+  }, [watch]);
 
   //fce onSubmit
   const onSubmit = (data) => console.log(data);
@@ -98,8 +77,8 @@ export const Form = () => {
             label="Destinace *"
             name="destination"
           />
-          <Input label="Počet hostů *" type="number" name="guests" min="0" />
-          <Input label="Počet nocí *" type="number" name="nights" min="0" />
+          {/* <Input label="Počet hostů *" type="number" name="guests" min="0" /> */}
+          {/* <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
           <Input label="Odlet nejdříve *" type="date" name="date" />
         </div>
 
@@ -135,6 +114,9 @@ export const Form = () => {
         <div className="wedding-calculate__services">
           {listServices.map(({ photo, id, value, label, price }) => {
             {
+              if (isInPackage(value)) {
+                return null;
+              }
               return (
                 <CheckboxWithImg
                   key={id}

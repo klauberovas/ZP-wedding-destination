@@ -8,16 +8,11 @@ import {
 
 export const calculatePrice = (userData) => {
   let totalPrice = 0;
-  if (
-    userData.destination !== '' &&
-    userData.nights !== '' &&
-    userData.guests !== ''
-  ) {
+  if (userData.destination) {
     let destinationPrice = listDestinations.find(
       (item) => item.name === userData.destination,
     ).price;
-    totalPrice +=
-      destinationPrice * Number(userData.nights) * Number(userData.guests);
+    totalPrice += destinationPrice;
   }
 
   if (userData.ceremony !== '') {
@@ -34,7 +29,7 @@ export const calculatePrice = (userData) => {
     totalPrice += packagePrice;
   }
 
-  if (userData.services.length !== 0) {
+  if (userData.services && userData.services.length !== 0) {
     userData.services.forEach((service) => {
       let servicePrice = listServices.find(
         (item) => item.value === service,
