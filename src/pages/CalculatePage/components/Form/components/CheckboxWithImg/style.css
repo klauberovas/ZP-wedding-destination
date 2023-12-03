@@ -19,6 +19,7 @@
 
 .checkbox__container {
   position: relative;
+  z-index: 0;
 }
 
 .checkbox__price {

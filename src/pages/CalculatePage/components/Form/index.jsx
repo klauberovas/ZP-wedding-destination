@@ -22,19 +22,16 @@ import {
 } from './data';
 
 export const Form = () => {
+  //defaultní hodnoty ve formu
   const methods = useForm({
     defaultValues: { ceremony: 'Symbolický obřad', package: 'Balíček Light' },
   });
-
   const errors = methods.formState.errors;
   const watch = methods.watch();
 
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
-
   const [totalPrice, setTotalPrice] = useState(0);
 
+  //vypisuje co je v balíčku
   const isInPackage = (value) => {
     if (watch.package === 'Balíček Delux' && packageDeluxe.includes(value)) {
       return true;
@@ -45,13 +42,12 @@ export const Form = () => {
     return false;
   };
 
-  const resetServices = () => {
-    setUserData((prevState) => ({
-      ...prevState,
-      services: [],
-    }));
-  };
+  //vyresetuje services
+  useEffect(() => {
+    methods.resetField('services');
+  }, [watch.package]);
 
+  //přepisuje cenu
   useEffect(() => {
     console.log(watch);
 
@@ -59,7 +55,12 @@ export const Form = () => {
     setTotalPrice(price);
   }, [watch]);
 
-  //fce onSubmit
+  //vypíše errory
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+
+  //fce onSubmit -vypíše obsah políček
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -68,9 +69,11 @@ export const Form = () => {
         onSubmit={methods.handleSubmit(onSubmit)}
         className="wedding-calculate"
       >
+        {/* Ukazatel ceny */}
         <div className="wedding-price_display">
           <div className="price-total">{totalPrice}</div>
         </div>
+
         <div className="wedding-calculate__inputs">
           <SelectInput
             data={listDestinations}
@@ -79,6 +82,7 @@ export const Form = () => {
           />
           {/* <Input label="Počet hostů *" type="number" name="guests" min="0" /> */}
           {/* <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
+
           <Input label="Odlet nejdříve *" type="date" name="date" />
         </div>
 
