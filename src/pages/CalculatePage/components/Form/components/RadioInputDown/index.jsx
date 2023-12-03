@@ -2,7 +2,7 @@ import './style.css';
 
 export const RadioInputDown = ({ label, name, value, onSelect }) => {
   return (
-    <label htmlFor="">
+    <label>
       <div className="radio">
         <input
           className="radio-input"
