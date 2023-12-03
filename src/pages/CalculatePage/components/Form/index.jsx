@@ -22,6 +22,7 @@ import {
 } from './data';
 
 export const Form = () => {
+  const [userData, setUserData] = useState();
   //defaultní hodnoty ve formu
   const methods = useForm({
     defaultValues: { ceremony: 'Symbolický obřad', package: 'Balíček Light' },
@@ -55,13 +56,15 @@ export const Form = () => {
     setTotalPrice(price);
   }, [watch]);
 
-  //vypíše errory
   useEffect(() => {
-    console.log(errors);
-  }, [errors]);
+    if (methods.formState.isSubmitSuccessful) {
+      console.log(userData);
+      methods.reset();
+    }
+  }, [methods.formState, methods.reset]);
 
   //fce onSubmit -vypíše obsah políček
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => setUserData(data);
 
   return (
     <FormProvider {...methods}>
