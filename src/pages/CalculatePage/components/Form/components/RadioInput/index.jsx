@@ -1,14 +1,11 @@
 import { formatPrice } from '../../formatPrice';
+import { useFormContext } from 'react-hook-form';
 
-export const RadioInput = ({
-  label,
-  image,
-  name,
-  value,
-  onSelect,
-  checked,
-  price,
-}) => {
+export const RadioInput = ({ label, image, name, value, price }) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <label className="checkbox__label">
       <div className="checkbox">
@@ -18,13 +15,13 @@ export const RadioInput = ({
         </div>
         <div className="checkbox__description">
           <input
+            {...register(name, { required: true })}
             className="checkbox__input"
             type="radio"
             name={name}
             value={value}
-            onChange={onSelect}
-            checked={checked}
           />
+          {errors[name] && <span>Toto pole je povinné</span>}
           {label}
         </div>
       </div>

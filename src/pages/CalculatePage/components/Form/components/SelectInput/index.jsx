@@ -1,9 +1,12 @@
-export const SelectInput = ({ data, label, name, value, onSelect }) => {
+import { useFormContext } from 'react-hook-form';
+
+export const SelectInput = ({ data, label, name }) => {
+  const { register } = useFormContext();
   return (
     <div className="field">
       <label className="field__label">
         {label}
-        <select onChange={onSelect} name={name} value={value} required>
+        <select {...register(name)} required>
           <Option data={data} />
         </select>
       </label>

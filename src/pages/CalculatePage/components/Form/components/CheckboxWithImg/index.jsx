@@ -1,5 +1,6 @@
 import './style.css';
 import { formatPrice } from '../../formatPrice';
+import { useFormContext } from 'react-hook-form';
 
 export const CheckboxWithImg = ({
   label,
@@ -11,6 +12,11 @@ export const CheckboxWithImg = ({
   disabled,
   price,
 }) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <label className="checkbox__label">
       <div className="checkbox">
@@ -20,14 +26,13 @@ export const CheckboxWithImg = ({
         </div>
         <div className="checkbox__description">
           <input
+            {...register(name)}
             className="checkbox__input"
             type="checkbox"
-            onChange={onSelect}
             value={value}
-            name={name}
-            checked={checked}
             disabled={disabled}
           />
+          {errors[name] && <span>Toto pole je povinné</span>}
           {label}
         </div>
       </div>

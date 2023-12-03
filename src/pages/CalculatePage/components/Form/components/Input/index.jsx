@@ -1,24 +1,28 @@
 import './style.css';
+import { useFormContext } from 'react-hook-form';
 
-export const Input = ({ type, label, name, value, onSelect, min, pattern }) => {
+export const Input = ({ type, label, name, min, pattern }) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="field">
       <label className="field__label" htmlFor={name}>
         {label}
       </label>
       <input
+        {...register(name, { required: true })}
         className="field__input"
         type={type}
-        onChange={onSelect}
-        name={name}
         id={name}
-        value={value}
         {...(type === 'number' ? { min: min } : {})}
         {...(type === 'tel'
           ? { pattern: pattern, placeholder: '777123456' }
           : {})}
-        required
       />
+      {errors[name] && <span>Toto pole je povinné</span>}
     </div>
   );
 };
