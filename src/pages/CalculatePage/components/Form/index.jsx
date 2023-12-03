@@ -56,14 +56,14 @@ export const Form = () => {
     setTotalPrice(price);
   }, [watch]);
 
+  //vynuluje inputy
   useEffect(() => {
     if (methods.formState.isSubmitSuccessful) {
-      console.log(userData);
       methods.reset();
     }
   }, [methods.formState, methods.reset]);
 
-  //fce onSubmit -vypíše obsah políček
+  //fce onSubmit = uloží data do stavu
   const onSubmit = (data) => setUserData(data);
 
   return (
