@@ -5,7 +5,7 @@ export const Button = ({ label, url }) => {
   return (
     <div className="button-container">
       {!url ? (
-        <button className="button" type="submit">
+        <button className="button  button--no-border" type="submit">
           {label}
         </button>
       ) : (
