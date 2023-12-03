@@ -5,7 +5,7 @@
 
 .reference__img,
 .reference__img img {
-  height: 60vh;
+  height: auto;
 }
 
 .reference__img img {
@@ -35,7 +35,7 @@
 
   .reference__img,
   .reference__img img {
-    height: 70vh;
+    height: auto;
   }
 
   .order--second {
