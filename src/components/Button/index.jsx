@@ -4,9 +4,15 @@ import './style.css';
 export const Button = ({ label, url }) => {
   return (
     <div className="button-container">
-      <Link to={url} className="button">
-        {label}
-      </Link>
+      {!url ? (
+        <button className="button" type="submit">
+          {label}
+        </button>
+      ) : (
+        <Link className="button" to={url}>
+          {label}
+        </Link>
+      )}
     </div>
   );
 };

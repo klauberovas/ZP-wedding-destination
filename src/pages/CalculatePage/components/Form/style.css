@@ -31,20 +31,6 @@
   gap: 1rem;
 }
 
-.wedding-contact {
-  display: flex;
-  justify-content: center;
-}
-
-.wedding-contact__inputs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  width: 50vw;
-}
-
-
 .message-container {
   display: flex;
   justify-content: center;

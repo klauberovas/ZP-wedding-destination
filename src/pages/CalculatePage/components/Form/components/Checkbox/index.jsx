@@ -1,36 +1,16 @@
 import './style.css';
-import { formatPrice } from '../../formatPrice';
 
-export const Checkbox = ({
-  label,
-  image,
-  value,
-  name,
-  onSelect,
-  checked,
-  disabled,
-  price,
-}) => {
+export const Checkbox = ({ onSelect, name, text, required, checked }) => {
   return (
-    <label className="checkbox__label">
-      <div className="checkbox">
-        <div className="checkbox__container">
-          <img className="checkbox__img" src={image}></img>
-          <div className="checkbox__price">{formatPrice(price)}</div>
-        </div>
-        <div className="checkbox__description">
-          <input
-            className="checkbox__input"
-            type="checkbox"
-            onChange={onSelect}
-            value={value}
-            name={name}
-            checked={checked}
-            disabled={disabled}
-          />
-          {label}
-        </div>
-      </div>
+    <label>
+      <input
+        type="checkbox"
+        onChange={onSelect}
+        name={name}
+        checked={checked}
+        {...(required ? { required: true } : {})}
+      />
+      {text}
     </label>
   );
 };

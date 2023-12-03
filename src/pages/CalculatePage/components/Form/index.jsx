@@ -5,6 +5,7 @@ import { SelectInput } from './components/SelectInput';
 import { Input } from './components/Input';
 import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
+import { CheckboxWithImg } from './components/CheckboxWithImg';
 import { Checkbox } from './components/Checkbox';
 import { calculatePrice } from './calculatePrice';
 import { Button } from '../../../../components/Button';
@@ -31,6 +32,7 @@ export const Form = () => {
     place: '',
     children: '',
     name: '',
+    lastname: '',
     phoneNumber: '',
     email: '',
     typeOfContact: '',
@@ -103,27 +105,29 @@ export const Form = () => {
       <div className="wedding-calculate__inputs">
         <SelectInput
           data={listDestinations}
-          label="Destinace"
+          label="Destinace *"
           name="destination"
           value={userData.destination}
           onSelect={handleInputChange}
         />
         <Input
-          label="Počet hostů"
+          label="Počet hostů *"
           type="number"
           name="guests"
+          min="0"
           value={userData.guests}
           onSelect={handleInputChange}
         />
         <Input
-          label="Počet nocí"
+          label="Počet nocí *"
           type="number"
           name="nights"
+          min="0"
           value={userData.nights}
           onSelect={handleInputChange}
         />
         <Input
-          label="Odlet nejdříve"
+          label="Odlet nejdříve *"
           type="date"
           name="date"
           value={userData.date}
@@ -171,7 +175,7 @@ export const Form = () => {
         {listServices.map(({ photo, id, value, label, price }) => {
           {
             return (
-              <Checkbox
+              <CheckboxWithImg
                 key={id}
                 label={label}
                 image={photo}
@@ -189,7 +193,7 @@ export const Form = () => {
         })}
       </div>
 
-      <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
+      <h3 className="wedding-calculate__title">Místo svatebního obřadu *</h3>
       <div className="wedding-calculate__place">
         {listPlaces.map(({ name, type }, index) => (
           <RadioInputDown
@@ -202,7 +206,7 @@ export const Form = () => {
         ))}
       </div>
 
-      <h3 className="wedding-calculate__title">Cestujete s dětmi</h3>
+      <h3 className="wedding-calculate__title">Cestujete s dětmi? *</h3>
       <div className="wedding-calculate__question">
         <RadioInputDown
           label="Ano"
@@ -224,9 +228,18 @@ export const Form = () => {
           <Input
             onSelect={handleInputChange}
             className="contact-label"
-            label="Jméno a příjmení"
+            label="Jméno *"
             value={userData.name}
             name="name"
+            type="text"
+          />
+          <Input
+            onSelect={handleInputChange}
+            className="contact-label"
+            label="Příjmení *"
+            value={userData.lastname}
+            name="lastname"
+            type="text"
           />
           <Input
             onSelect={handleInputChange}
@@ -234,42 +247,33 @@ export const Form = () => {
             label="Telefon"
             value={userData.phoneNumber}
             name="phoneNumber"
+            type="tel"
+            pattern="[0-9]{9}"
           />
           <Input
             onSelect={handleInputChange}
             value={userData.email}
             className="contact-label"
-            label="Email"
+            label="Email *"
             name="email"
-          />
-          <SelectInput
-            onSelect={handleInputChange}
-            className="contact-label"
-            label="Preferovaný typ kontaktu"
-            name="typeOfContact"
-            data={[{ name: 'Telefon' }, { name: 'Email' }]}
-            value={userData.typeOfContact}
+            type="email"
           />
         </div>
       </div>
-      <label>
-        <input
-          type="checkbox"
-          onChange={handleInputCheckbox}
-          name="agree"
-          checked={userData.agree}
-        />
-        Souhlasím se zpracováním osobních údajů
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          onChange={handleInputCheckbox}
-          name="sendEmail"
-          checked={userData.sendEmail}
-        />
-        Přeji si poslat potvrzení emailem
-      </label>
+      <Checkbox
+        onSelect={handleInputCheckbox}
+        name="agree"
+        text="Souhlasím se zpracováním osobních údajů *"
+        checked={userData.agree}
+        required={true}
+      />
+      <Checkbox
+        onSelect={handleInputCheckbox}
+        name="sendEmail"
+        text="Přeji si poslat potvrzení emailem"
+        checked={userData.sendEmail}
+      />
+
       <Button label="Mám zájem o tento balíček" />
     </form>
   );

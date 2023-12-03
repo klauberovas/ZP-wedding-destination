@@ -3,7 +3,7 @@ export const SelectInput = ({ data, label, name, value, onSelect }) => {
     <div className="field">
       <label className="field__label">
         {label}
-        <select onChange={onSelect} name={name} value={value}>
+        <select onChange={onSelect} name={name} value={value} required>
           <Option data={data} />
         </select>
       </label>

@@ -10,6 +10,7 @@ export const RadioInputDown = ({ label, name, value, onSelect }) => {
           name={name}
           value={value}
           onChange={onSelect}
+          required
         />
         {label}
       </div>

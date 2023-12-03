@@ -1,6 +1,6 @@
 import './style.css';
 
-export const Input = ({ type, label, name, value, onSelect }) => {
+export const Input = ({ type, label, name, value, onSelect, min, pattern }) => {
   return (
     <div className="field">
       <label className="field__label" htmlFor="">
@@ -12,6 +12,11 @@ export const Input = ({ type, label, name, value, onSelect }) => {
         onChange={onSelect}
         name={name}
         value={value}
+        {...(type === 'number' ? { min: min } : {})}
+        {...(type === 'tel'
+          ? { pattern: pattern, placeholder: '777123456' }
+          : {})}
+        required
       />
     </div>
   );
