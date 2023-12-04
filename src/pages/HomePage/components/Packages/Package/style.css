@@ -51,9 +51,6 @@
 }
 
 @media (min-width: 778px) {
-  .package {
-    margin: 0;
-  }
 
   .package__price {
     left: 3%;
