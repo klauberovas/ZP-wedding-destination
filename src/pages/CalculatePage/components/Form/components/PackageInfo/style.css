@@ -6,7 +6,9 @@
   align-items: center;
   width: 320px;
   background-color: var(--background-primary);
-  margin: 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4rem;
   padding: 1rem;
 }
 
@@ -29,6 +31,6 @@
 
 @media (min-width: 768px) {
   .wedding-calculate__package-info {
-    margin: 0;
+    margin-left: 0;
   }
 }

@@ -7,7 +7,7 @@ export const Packages = () => {
   return (
     <section className="packages">
       <Title label="Svatební balíčky" />
-      <p className="text--center text--mobile">
+      <p className="packages__text text--center text--mobile">
         V naší nabídce najdete tři kategorie svatebních balíčků vztahující se na
         všechny naše destinace.
       </p>

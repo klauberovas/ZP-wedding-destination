@@ -2,10 +2,10 @@ import './style.css';
 
 export const Title = ({ label }) => {
   return (
-    <div className="title-line">
-      <div className="line-one" />
+    <div className="title--line">
+      <div className="title__line-one" />
       <h2 className="title">{label}</h2>
-      <div className="line-two" />
+      <div className="title__line-two" />
     </div>
   );
 };

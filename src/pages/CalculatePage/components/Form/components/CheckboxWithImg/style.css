@@ -30,6 +30,5 @@
   text-align: right;
   background-color: var(--background-primary);
 
-  padding: 0.5rem;
-  height: 2rem;
+  padding: 0.3rem 0.5rem;
 }

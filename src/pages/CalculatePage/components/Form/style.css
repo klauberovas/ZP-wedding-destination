@@ -5,6 +5,15 @@
 
 .wedding-calculate__inputs,
 .wedding-calculate__ceremony,
+.wedding-calculate__package-info,
+.wedding-calculate__services,
+.wedding-calculate__place,
+.wedding-calculate__question {
+  margin-bottom: 4rem;
+}
+
+.wedding-calculate__inputs,
+.wedding-calculate__ceremony,
 .wedding-calculate__packages,
 .wedding-calculate__services,
 .wedding-calculate__place,
