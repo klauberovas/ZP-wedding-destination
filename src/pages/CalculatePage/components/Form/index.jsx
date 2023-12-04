@@ -73,8 +73,6 @@ export const Form = ({ onFormSubmit }) => {
 
   //přepisuje cenu
   useEffect(() => {
-    console.log(watch);
-
     const price = calculatePrice(watch);
     setTotalPrice(price);
   }, [watch]);
@@ -103,7 +101,7 @@ export const Form = ({ onFormSubmit }) => {
           className="wedding-calculate"
         >
           {/* Ukazatel ceny */}
-          <div className="wedding-price_display">
+          <div className="wedding-price__display">
             <div className="price-total">{totalPrice}</div>
           </div>
 
