@@ -5,4 +5,7 @@
 
 .navbar__item.active {
   font-weight: bold;
+  color: #fffefc;
+  text-shadow: rgb(0, 0, 0) 3px 2px 10px;
 }
+
