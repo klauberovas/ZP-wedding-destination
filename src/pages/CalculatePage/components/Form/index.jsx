@@ -26,6 +26,7 @@ import {
   packageDeluxe,
   packagePremium,
 } from './data';
+import { ErrorMessage } from './components/ErrorMessage';
 
 export const Form = ({ onFormSubmit }) => {
   //obsah dat od U
@@ -41,8 +42,9 @@ export const Form = ({ onFormSubmit }) => {
   const methods = useForm({
     defaultValues: { ceremony: 'Symbolický obřad', package: 'Balíček Light' },
   });
-  const errors = methods.formState.errors;
+
   const watch = methods.watch();
+  const errors = methods.formState.errors;
 
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -167,7 +169,12 @@ export const Form = ({ onFormSubmit }) => {
             })}
           </div>
 
-          <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
+          <h3 className="wedding-calculate__title">
+            Místo svatebního obřadu *
+          </h3>
+          {errors.place && (
+            <ErrorMessage text={'*Vyberte jednu z možností'} center={true} />
+          )}
           <div className="wedding-calculate__place">
             {listPlaces.map(({ name, type }, index) => (
               <RadioInputDown
@@ -179,7 +186,10 @@ export const Form = ({ onFormSubmit }) => {
             ))}
           </div>
 
-          <h3 className="wedding-calculate__title">Cestujete s dětmi?</h3>
+          <h3 className="wedding-calculate__title">Cestujete s dětmi? *</h3>
+          {errors.children && (
+            <ErrorMessage text={'*Vyberte jednu z možností'} center={true} />
+          )}
           <div className="wedding-calculate__question">
             <RadioInputDown label="Ano" name="children" value="Ano" />
             <RadioInputDown label="Ne" name="children" value="Ne" />
@@ -188,7 +198,7 @@ export const Form = ({ onFormSubmit }) => {
           {/* <Input label="Počet hostů *" type="number" name="guests" min="0" />
           <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
           <div className="wedding-calculate__info">
-            <p>*Tato kalkulačku je pouze hrubý odhad.</p>
+            <p>*Odhad kalkulačky je pouze orientační.</p>
             <p>
               **Celková cena je uvedena za jeden den včetně svatebního balíčku.
               Pro výpočet kompletní ceny zájezdu prosím odešlete kontaktní

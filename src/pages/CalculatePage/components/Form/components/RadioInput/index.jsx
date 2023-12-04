@@ -1,12 +1,8 @@
 import { formatPrice } from '../../formatPrice';
 import { useFormContext } from 'react-hook-form';
-import { ErrorMessage } from '../ErrorMessage';
 
 export const RadioInput = ({ label, image, name, value, price }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register } = useFormContext();
 
   return (
     <label className="checkbox-img__label">
@@ -23,7 +19,6 @@ export const RadioInput = ({ label, image, name, value, price }) => {
             name={name}
             value={value}
           />
-          {errors[name] && <ErrorMessage />}
           {label}
         </div>
       </div>

@@ -23,7 +23,9 @@ export const Input = ({ type, label, name, min, pattern }) => {
           ? { pattern: pattern, placeholder: '777123456' }
           : {})}
       />
-      {errors[name] && <ErrorMessage />}
+      {errors[name] && (
+        <ErrorMessage text={'*Toto pole je povinné'} center={false} />
+      )}
     </div>
   );
 };

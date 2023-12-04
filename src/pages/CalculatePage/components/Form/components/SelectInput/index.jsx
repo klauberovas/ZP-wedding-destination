@@ -6,6 +6,7 @@ export const SelectInput = ({ data, label, name }) => {
     register,
     formState: { errors },
   } = useFormContext();
+
   return (
     <div className="field">
       <label className="field__label">
@@ -13,7 +14,9 @@ export const SelectInput = ({ data, label, name }) => {
         <select {...register(name, { required: true })}>
           <Option data={data} />
         </select>
-        {errors[name] && <ErrorMessage />}
+        {errors[name] && (
+          <ErrorMessage text={'*Toto pole je povinné'} center={false} />
+        )}
       </label>
     </div>
   );
