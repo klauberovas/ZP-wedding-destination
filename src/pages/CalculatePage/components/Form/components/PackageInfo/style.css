@@ -1,13 +1,11 @@
 .wedding-calculate__package-info {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 320px;
   background-color: var(--background-primary);
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0 auto;
   margin-bottom: 4rem;
   padding: 1rem;
 }
@@ -17,7 +15,7 @@
   gap: 0.5rem;
 }
 
-.package__title h6 {
+.package__title h5 {
   margin: 0;
 }
 
@@ -26,7 +24,7 @@
 }
 
 .package__content--hidden {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 768px) {
