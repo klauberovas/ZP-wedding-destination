@@ -33,7 +33,9 @@
 
 .message-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 50vw;
   margin-top: 20px;
 }
 

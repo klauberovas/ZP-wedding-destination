@@ -23,6 +23,10 @@ import {
 
 export const Form = () => {
   const [userData, setUserData] = useState();
+
+  // načtení dat po submitu
+  const [showUserData, setShowUserData] = useState(false);
+
   //defaultní hodnoty ve formu
   const methods = useForm({
     defaultValues: { ceremony: 'Symbolický obřad', package: 'Balíček Light' },
@@ -63,11 +67,35 @@ export const Form = () => {
     }
   }, [methods.formState, methods.reset]);
 
-  //fce onSubmit = uloží data do stavu
-  const onSubmit = (data) => setUserData(data);
+  //fce onSubmit = uloží data do stavu 
+  const onSubmit = (data) =>  
+  {setUserData(data);
+  setShowUserData(true);
+  }
 
   return (
     <FormProvider {...methods}>
+           {showUserData ? (
+  
+    <div className="message-container">
+    <h2>Rekapitulace formuláře</h2>
+    <div className="message">
+    <p>Typ obřadu: {userData.ceremony}</p>
+    <p>Balíček: {userData.package}</p>
+    <p>Destinace: {userData.destination}</p>
+    <p>Datum odletu: {userData.date}</p>
+    <p>Místo obřadu: {userData.place}</p>
+    <p>Cestujete s dětmi: {userData.children}</p>
+    <p>Jméno: {userData.name}</p>
+    <p>Příjmení: {userData.lastname}</p>
+    <p>Telefon: {userData.phoneNumber}</p>
+    <p>Email: {userData.email}</p>
+    <p>Souhlasím se zpracováním osobních údajů: {userData.agree ? 'Ano' : 'Ne'}</p>
+    <p>Přeji si poslat potvrzení emailem: {userData.sendEmail ? 'Ano' : 'Ne'}</p>
+    <p></p>
+    </div>
+  </div>
+  ) : (
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
         className="wedding-calculate"
@@ -194,6 +222,7 @@ export const Form = () => {
 
         <Button label="Mám zájem o tento balíček" />
       </form>
+      )}
     </FormProvider>
   );
 };
