@@ -1,14 +1,20 @@
 import { useFormContext } from 'react-hook-form';
 
 export const SelectInput = ({ data, label, name }) => {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div className="field">
       <label className="field__label">
         {label}
-        <select {...register(name)} required>
+        <select {...register(name, { required: true })}>
           <Option data={data} />
         </select>
+        {errors[name] && (
+          <span className="required--input">Toto pole je povinné</span>
+        )}
       </label>
     </div>
   );

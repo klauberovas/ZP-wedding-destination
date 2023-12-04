@@ -22,7 +22,9 @@ export const Input = ({ type, label, name, min, pattern }) => {
           ? { pattern: pattern, placeholder: '777123456' }
           : {})}
       />
-      {errors[name] && <span>Toto pole je povinné</span>}
+      {errors[name] && (
+        <span className="required--input">Toto pole je povinné</span>
+      )}
     </div>
   );
 };

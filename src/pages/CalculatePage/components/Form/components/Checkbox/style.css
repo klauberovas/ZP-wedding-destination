@@ -1,12 +1,4 @@
-.wedding-contact {
+.checkbox__label {
   display: flex;
   justify-content: center;
-}
-
-.wedding-contact__inputs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 50vw;
 }

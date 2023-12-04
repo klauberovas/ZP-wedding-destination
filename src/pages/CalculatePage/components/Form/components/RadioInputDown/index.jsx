@@ -2,10 +2,7 @@ import './style.css';
 import { useFormContext } from 'react-hook-form';
 
 export const RadioInputDown = ({ label, name, value }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register } = useFormContext();
 
   return (
     <label>
@@ -16,9 +13,8 @@ export const RadioInputDown = ({ label, name, value }) => {
           type="radio"
           name={name}
           value={value}
-          required
         />
-        {errors[name] && <span>Toto pole je povinné</span>}
+
         {label}
       </div>
     </label>

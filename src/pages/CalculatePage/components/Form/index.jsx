@@ -171,9 +171,7 @@ export const Form = ({ onFormSubmit }) => {
             })}
           </div>
 
-          <h3 className="wedding-calculate__title">
-            Místo svatebního obřadu *
-          </h3>
+          <h3 className="wedding-calculate__title">Místo svatebního obřadu</h3>
           <div className="wedding-calculate__place">
             {listPlaces.map(({ name, type }, index) => (
               <RadioInputDown
@@ -185,7 +183,7 @@ export const Form = ({ onFormSubmit }) => {
             ))}
           </div>
 
-          <h3 className="wedding-calculate__title">Cestujete s dětmi? *</h3>
+          <h3 className="wedding-calculate__title">Cestujete s dětmi?</h3>
           <div className="wedding-calculate__question">
             <RadioInputDown label="Ano" name="children" value="Ano" />
             <RadioInputDown label="Ne" name="children" value="Ne" />
@@ -228,7 +226,9 @@ export const Form = ({ onFormSubmit }) => {
           />
           <Checkbox name="sendEmail" text="Přeji si poslat potvrzení emailem" />
 
-          <Button label="Mám zájem o tento balíček" />
+          <section>
+            <Button label="Mám zájem o tento balíček" />
+          </section>
         </form>
       )}
     </FormProvider>

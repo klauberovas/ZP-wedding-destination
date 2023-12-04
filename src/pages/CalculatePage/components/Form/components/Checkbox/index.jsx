@@ -7,15 +7,20 @@ export const Checkbox = ({ name, text, required }) => {
     formState: { errors },
   } = useFormContext();
 
+  const isError = errors[name];
+
   return (
-    <label>
+    <label className="checkbox__label">
       <input
+        className="checkbox__input"
         {...register(name, { required: required })}
         type="checkbox"
         name={name}
       />
-      {errors[name] && <span>Toto pole je povinné</span>}
-      {text}
+
+      <span className={`checkbox__text ${isError ? 'required--input' : null}`}>
+        {text}
+      </span>
     </label>
   );
 };
