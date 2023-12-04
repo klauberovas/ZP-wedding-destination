@@ -13,8 +13,11 @@ export const dataPackages = [
   {
     id: 1,
     name: 'Balíček DELUXE',
-    contains: 'Vše z balíčku LIGHT plus:',
+    contains: null,
     content: [
+      'Pokoj pro nevěstu',
+      'Živá hudba / DJ',
+      'Květinová výzdoba',
       'Svatební oblouk',
       'Kytice pro nevěstu',
       'Svatební dort',
@@ -31,8 +34,8 @@ export const dataPackages = [
       'Make-up pro nevěstu',
       'Plavba při západu slunce',
       'Romantická večeře',
-      'DJ',
-      'Šampaňské',
+      'Církevní obřad',
+      'Občerstvení a nápoje',
       'Ohňostroj',
     ],
     price: '45.000',
