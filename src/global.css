@@ -86,3 +86,34 @@ section {
   }
 
 }
+
+/*-----Obecné styly pro form----*/
+label,
+input,
+select {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+input,
+select {
+  padding: 0.5rem;
+}
+
+label {
+  display: inline-block;
+}
+
+input,
+select {
+  display: block;
+}
+
+label {
+  cursor: pointer;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select {
+  width: 300px;
+}

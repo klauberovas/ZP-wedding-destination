@@ -1,0 +1,30 @@
+/* Ukazatel total price*/
+
+.wedding-calculate__price {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  max-width: 200px;
+  height: 50px;
+  background-color: var(--background-primary);
+  border-radius: 20px;
+
+  position: sticky;
+  left: 100%;
+  top: 20%;
+  z-index: 2;
+}
+
+@media (min-width:768px) {
+  .wedding-calculate__price {
+    top: 50%;
+  }
+}
+
+.price-total {
+  min-width: 60px;
+  background-color: #DDCC9F;
+  border-radius: 20px;
+  padding: 4%;
+  text-align: end;
+}

@@ -12,6 +12,7 @@ import { calculatePrice } from './calculatePrice';
 import { Button } from '../../../../components/Button';
 import { FormSummary } from './components/FormSummary';
 import { PackageInfo } from './components/PackageInfo';
+import { PriceIndicator } from './components/PriceIndicator';
 //import dat
 import {
   listDestinations,
@@ -97,13 +98,10 @@ export const Form = ({ onFormSubmit }) => {
         <FormSummary userData={userData} price={totalPrice} />
       ) : (
         <form
-          onSubmit={methods.handleSubmit(onSubmit)}
           className="wedding-calculate"
+          onSubmit={methods.handleSubmit(onSubmit)}
         >
-          {/* Ukazatel ceny */}
-          <div className="wedding-price__display">
-            <div className="price-total">{totalPrice}</div>
-          </div>
+          <PriceIndicator totalPrice={totalPrice} />
 
           <div className="wedding-calculate__inputs">
             <SelectInput
@@ -111,8 +109,6 @@ export const Form = ({ onFormSubmit }) => {
               label="Destinace *"
               name="destination"
             />
-            {/* <Input label="Počet hostů *" type="number" name="guests" min="0" /> */}
-            {/* <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
 
             <Input label="Odlet nejdříve *" type="date" name="date" />
           </div>
@@ -189,9 +185,17 @@ export const Form = ({ onFormSubmit }) => {
             <RadioInputDown label="Ne" name="children" value="Ne" />
           </div>
 
-          <p className="text--additional">**Celková cena je uvedena za jeden den včetně svatebního balíčku. Pro výpočet kompletní cenu zájezdu prosím odešlete kontaktní formulář.</p>
-
-          <h3>Kontakt</h3>
+          {/* <Input label="Počet hostů *" type="number" name="guests" min="0" />
+          <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
+          <div className="wedding-calculate__info">
+            <p>*Tato kalkulačku je pouze hrubý odhad.</p>
+            <p>
+              **Celková cena je uvedena za jeden den včetně svatebního balíčku.
+              Pro výpočet kompletní ceny zájezdu prosím odešlete kontaktní
+              formulář.
+            </p>
+          </div>
+          <h3>Kontaktní formulář</h3>
           <div className="wedding-contact">
             <div className="wedding-contact__inputs">
               <Input
