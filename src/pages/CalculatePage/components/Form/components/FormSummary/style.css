@@ -1,0 +1,18 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  border-radius: 20px;
+}
+
+.message {
+  padding: 5%;
+  background-color: #F0F0F0;
+  border: 1px solid var(--background-primary);
+  border-radius: 4px;
+}
+
+.message-title {
+  margin-left: 0;
+}

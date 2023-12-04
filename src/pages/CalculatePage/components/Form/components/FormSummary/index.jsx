@@ -1,9 +1,9 @@
-
-export const FormSummary = ({userData, totalPrice}) => {
+import './style.css'
+export const FormSummary = ({userData, price}) => {
   return (
   <div className="message-container">
-  <h2>Rekapitulace formuláře</h2>
-  <p>Děkujeme za odeslání formuláře!</p>
+  <h2 className="message-title">Rekapitulace formuláře</h2>
+  <p>Děkujeme za vyplnění formuláře!</p>
   <p>V následujících dnech Vás bude kontaktovat náš agent s nabídkou zájezdů dle vámi zadaných informací.</p>
   <div className="message">
   <p>Typ obřadu: {userData.ceremony}</p>
@@ -18,7 +18,7 @@ export const FormSummary = ({userData, totalPrice}) => {
   <p>Email: {userData.email}</p>
   <p>Souhlasím se zpracováním osobních údajů: {userData.agree ? 'Ano' : 'Ne'}</p>
   <p>Přeji si poslat potvrzení emailem: {userData.sendEmail ? 'Ano' : 'Ne'}</p>
-  <p>Celková cena: {totalPrice}</p>
+  <p>Celková cena: {price}</p>
   </div>
 </div>
   )
