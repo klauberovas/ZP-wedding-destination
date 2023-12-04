@@ -1,7 +1,5 @@
 import './style.css';
-import instagramIcon from './img/instagram.svg';
-import facebookIcon from './img/facebook.svg';
-import mailIcon from './img/mail.svg';
+import { Facebook, Mail, Instagram } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -21,13 +19,13 @@ export const Footer = () => {
       </div>
       <div className="footer__icons">
         <a href="https://www.instagram.com/">
-          <img src={instagramIcon} alt="Instagram icon"></img>
+          <Instagram size={40} strokeWidth={0.8} />
         </a>
         <a href="https://www.gmail.com">
-          <img src={mailIcon} alt="G-mail icon"></img>
+          <Mail size={40} strokeWidth={0.8} />
         </a>
         <a href="https://www.facebook.com">
-          <img src={facebookIcon} alt="Facebook icon"></img>
+          <Facebook size={40} strokeWidth={0.8} />
         </a>
       </div>
       <div className="footer__text">@2023 LAUBER DESTINATION WEDDING </div>
