@@ -1,7 +1,7 @@
 .package {
   position: relative;
   max-width: 325px;
-  height: 420px;
+  height: 400px;
 
   background-color: var(--background-secundary);
 
@@ -74,7 +74,7 @@
 
 @media (min-width: 1100px) {
   .package {
-    height: 450px;
+    height: 480px;
   }
 
   .package__price {

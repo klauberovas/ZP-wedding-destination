@@ -1,4 +1,5 @@
 import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from '../ErrorMessage';
 
 export const SelectInput = ({ data, label, name }) => {
   const {
@@ -12,9 +13,7 @@ export const SelectInput = ({ data, label, name }) => {
         <select {...register(name, { required: true })}>
           <Option data={data} />
         </select>
-        {errors[name] && (
-          <span className="required--input">Toto pole je povinné</span>
-        )}
+        {errors[name] && <ErrorMessage />}
       </label>
     </div>
   );

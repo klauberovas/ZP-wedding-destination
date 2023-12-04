@@ -27,7 +27,9 @@ import {
 } from './data';
 
 export const Form = ({ onFormSubmit }) => {
+  //obsah dat od U
   const [userData, setUserData] = useState();
+
   //obsah aktuálního balíčku
   const [currentPackage, setCurrentPackage] = useState(listLight);
 

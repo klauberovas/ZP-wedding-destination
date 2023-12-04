@@ -1,5 +1,6 @@
 import './style.css';
 import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from '../ErrorMessage';
 
 export const Input = ({ type, label, name, min, pattern }) => {
   const {
@@ -22,9 +23,7 @@ export const Input = ({ type, label, name, min, pattern }) => {
           ? { pattern: pattern, placeholder: '777123456' }
           : {})}
       />
-      {errors[name] && (
-        <span className="required--input">Toto pole je povinné</span>
-      )}
+      {errors[name] && <ErrorMessage />}
     </div>
   );
 };

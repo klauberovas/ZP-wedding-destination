@@ -28,7 +28,7 @@
 .wedding-calculate__services {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.6rem;
+  gap: 3rem;
 }
 
 .wedding-contact {
@@ -42,11 +42,6 @@
   flex-wrap: wrap;
   gap: 1rem;
   width: 50vw;
-}
-
-/*----Povinná pole----*/
-.required--input {
-  color: red;
 }
 
 @media (min-width: 450px) {

@@ -1,5 +1,6 @@
 import { formatPrice } from '../../formatPrice';
 import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from '../ErrorMessage';
 
 export const RadioInput = ({ label, image, name, value, price }) => {
   const {
@@ -22,9 +23,7 @@ export const RadioInput = ({ label, image, name, value, price }) => {
             name={name}
             value={value}
           />
-          {errors[name] && (
-            <span className="required--input">Toto pole je povinné</span>
-          )}
+          {errors[name] && <ErrorMessage />}
           {label}
         </div>
       </div>
