@@ -189,6 +189,8 @@ export const Form = ({ onFormSubmit }) => {
             <RadioInputDown label="Ne" name="children" value="Ne" />
           </div>
 
+          <p className="text--additional">**Celková cena je uvedena za jeden den včetně svatebního balíčku. Pro výpočet kompletní cenu zájezdu prosím odešlete kontaktní formulář.</p>
+
           <h3>Kontakt</h3>
           <div className="wedding-contact">
             <div className="wedding-contact__inputs">

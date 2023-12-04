@@ -101,3 +101,11 @@
   padding: 4%;
   text-align: end;
 }
+
+.text--additional {
+  font-size: 1rem;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 50%;
+  position: relative;
+}
