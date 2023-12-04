@@ -25,7 +25,7 @@ import {
   packagePremium,
 } from './data';
 
-export const Form = () => {
+export const Form = ({ onFormSubmit }) => {
   const [userData, setUserData] = useState();
   //obsah aktuálního balíčku
   const [currentPackage, setCurrentPackage] = useState(listLight);
@@ -87,6 +87,7 @@ export const Form = () => {
   const onSubmit = (data) => {
     setUserData(data);
     setShowUserData(true);
+    onFormSubmit();
   };
 
   return (
