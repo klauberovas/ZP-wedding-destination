@@ -10,6 +10,7 @@ import { CheckboxWithImg } from './components/CheckboxWithImg';
 import { Checkbox } from './components/Checkbox';
 import { calculatePrice } from './calculatePrice';
 import { Button } from '../../../../components/Button';
+import { FormSummary } from './components/FormSummary';
 //import dat
 import {
   listDestinations,
@@ -90,40 +91,17 @@ export const Form = () => {
 
   return (
     <FormProvider {...methods}>
-      {showUserData ? (
-        <div className="message-container">
-          <h2>Rekapitulace formuláře</h2>
-          <div className="message">
-            <p>Typ obřadu: {userData.ceremony}</p>
-            <p>Balíček: {userData.package}</p>
-            <p>Destinace: {userData.destination}</p>
-            <p>Datum odletu: {userData.date}</p>
-            <p>Místo obřadu: {userData.place}</p>
-            <p>Cestujete s dětmi: {userData.children}</p>
-            <p>Jméno: {userData.name}</p>
-            <p>Příjmení: {userData.lastname}</p>
-            <p>Telefon: {userData.phoneNumber}</p>
-            <p>Email: {userData.email}</p>
-            <p>
-              Souhlasím se zpracováním osobních údajů:{' '}
-              {userData.agree ? 'Ano' : 'Ne'}
-            </p>
-            <p>
-              Přeji si poslat potvrzení emailem:{' '}
-              {userData.sendEmail ? 'Ano' : 'Ne'}
-            </p>
-            <p></p>
-          </div>
+           {showUserData ? (
+   <FormSummary userData={userData} totalPrice={totalPrice} />
+  ) : (
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="wedding-calculate"
+      >
+        {/* Ukazatel ceny */}
+        <div className="wedding-price_display">
+          <div className="price-total">{totalPrice}</div>
         </div>
-      ) : (
-        <form
-          onSubmit={methods.handleSubmit(onSubmit)}
-          className="wedding-calculate"
-        >
-          {/* Ukazatel ceny */}
-          <div className="wedding-price_display">
-            <div className="price-total">{totalPrice}</div>
-          </div>
 
           <div className="wedding-calculate__inputs">
             <SelectInput
