@@ -1,0 +1,21 @@
+.wedding-calculate__package-info {
+  flex-basis: 100%;
+  margin-left: 1rem;
+}
+
+.package__title {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.package__title h6 {
+  margin: 0;
+}
+
+.package__title img {
+  cursor: pointer;
+}
+
+.package__content--hidden {
+  font-size: 0.8rem;
+}

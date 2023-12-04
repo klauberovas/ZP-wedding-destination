@@ -1,14 +1,32 @@
 import './style.css';
+import arrow from './img/down.svg';
+import { useState } from 'react';
 
 export const PackageInfo = ({ currentPackage }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="wedding-calculate__package">
-      <h6>* V ceně balíčku je </h6>
-      <ul className="wedding-calculate__package--content">
-        {currentPackage.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
+    <div className="wedding-calculate__package-info">
+      <div className="package__title">
+        <h6>* V ceně balíčku je:</h6>
+        <img
+          onClick={handleClick}
+          className="package__roller"
+          src={arrow}
+          alt="icon down"
+        />
+      </div>
+      {isOpen ? (
+        <ul className="package__content--hidden">
+          {currentPackage.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 };
