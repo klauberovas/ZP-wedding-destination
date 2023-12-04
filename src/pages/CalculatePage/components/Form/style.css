@@ -28,7 +28,7 @@
 .wedding-calculate__services {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2.6rem;
 }
 
 @media (min-width: 450px) {
@@ -75,8 +75,7 @@
 
   position: sticky;
   top: 10%;
-  right: 0;
-  margin-left: 50%;
+  bottom: 0;
   z-index: 2;
 }
 

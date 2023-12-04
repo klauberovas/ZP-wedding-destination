@@ -143,8 +143,8 @@ export const Form = ({ onFormSubmit }) => {
                 value={name}
               />
             ))}
-            <PackageInfo currentPackage={currentPackage} />
           </div>
+          <PackageInfo currentPackage={currentPackage} />
 
           <h3 className="wedding-calculate__title">Doplňkové služby</h3>
           <div className="wedding-calculate__services">
