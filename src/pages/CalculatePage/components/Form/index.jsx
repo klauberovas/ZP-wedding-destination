@@ -94,7 +94,7 @@ export const Form = ({ onFormSubmit }) => {
   return (
     <FormProvider {...methods}>
       {showUserData ? (
-        <FormSummary userData={userData} totalPrice={totalPrice} />
+        <FormSummary userData={userData} price={totalPrice} />
       ) : (
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
