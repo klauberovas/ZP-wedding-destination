@@ -179,3 +179,30 @@ export const packagePremium = [
   'makeup',
   'cruise',
 ];
+
+export const listLight = [
+  'Pokoj pro nevěstu',
+  'Jednoduchá květinová výzdoba',
+  'Reprodukovaná hudba',
+];
+
+export const listDeluxe = [
+  'Pokoj pro nevěstu',
+  'Živá hudba / DJ',
+  'Květinová výzdoba',
+  'Svatební oblouk',
+  'Kytice pro nevěstu',
+  'Svatební dort',
+  'Fotograf',
+];
+
+export const listPremium = [
+  ...listDeluxe,
+  'Svatební účes',
+  'Make-up pro nevěstu',
+  'Plavba při západu slunce',
+  'Romantická večeře',
+  'Církevní obřad',
+  'Občerstvení a nápoje',
+  'Ohňostroj',
+];
