@@ -44,9 +44,14 @@
   font-size: 1rem;
   padding-top: 3%;
   padding-bottom: 3%;
-  width: 50%;
   text-align: center;
   margin: 0 auto;
+}
+
+@media (min-width:768px) {
+  .wedding-calculate__info {
+    width: 40rem;
+  }
 }
 
 .wedding-contact {

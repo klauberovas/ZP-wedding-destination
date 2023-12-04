@@ -12,7 +12,7 @@ export const PackageInfo = ({ currentPackage }) => {
   return (
     <div className="wedding-calculate__package-info">
       <div className="package__title">
-        <h6>* V ceně balíčku je:</h6>
+        <h5>* V ceně balíčku je:</h5>
         <img
           onClick={handleClick}
           className="package__roller"
