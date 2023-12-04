@@ -63,7 +63,9 @@ export const Form = ({ onFormSubmit }) => {
     if (watch.package === 'Balíček Delux') {
       setCurrentPackage(listDeluxe);
     }
-    return setCurrentPackage(listPremium);
+    if (watch.package === 'Balíček Premium') {
+      return setCurrentPackage(listPremium);
+    }
   }, [watch.package]);
 
   //přepisuje cenu
@@ -141,8 +143,12 @@ export const Form = ({ onFormSubmit }) => {
               />
             ))}
             <div className="wedding-calculate__package-containes">
-              <h6>V ceně balíčku je:</h6>
-              {}
+              <h6>* V ceně balíčku je:</h6>
+              <ul className="">
+                {currentPackage.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
             </div>
           </div>
 
