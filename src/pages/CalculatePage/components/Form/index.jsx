@@ -11,6 +11,7 @@ import { Checkbox } from './components/Checkbox';
 import { calculatePrice } from './calculatePrice';
 import { Button } from '../../../../components/Button';
 import { FormSummary } from './components/FormSummary';
+import { PackageInfo } from './components/PackageInfo';
 //import dat
 import {
   listDestinations,
@@ -142,14 +143,7 @@ export const Form = ({ onFormSubmit }) => {
                 value={name}
               />
             ))}
-            <div className="wedding-calculate__package">
-              <h6>* V ceně balíčku je </h6>
-              <ul className="wedding-calculate__package--content">
-                {currentPackage.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
+            <PackageInfo currentPackage={currentPackage} />
           </div>
 
           <h3 className="wedding-calculate__title">Doplňkové služby</h3>
