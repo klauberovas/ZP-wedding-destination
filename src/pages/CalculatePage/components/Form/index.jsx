@@ -91,17 +91,17 @@ export const Form = () => {
 
   return (
     <FormProvider {...methods}>
-           {showUserData ? (
-   <FormSummary userData={userData} totalPrice={totalPrice} />
-  ) : (
-      <form
-        onSubmit={methods.handleSubmit(onSubmit)}
-        className="wedding-calculate"
-      >
-        {/* Ukazatel ceny */}
-        <div className="wedding-price_display">
-          <div className="price-total">{totalPrice}</div>
-        </div>
+      {showUserData ? (
+        <FormSummary userData={userData} totalPrice={totalPrice} />
+      ) : (
+        <form
+          onSubmit={methods.handleSubmit(onSubmit)}
+          className="wedding-calculate"
+        >
+          {/* Ukazatel ceny */}
+          <div className="wedding-price_display">
+            <div className="price-total">{totalPrice}</div>
+          </div>
 
           <div className="wedding-calculate__inputs">
             <SelectInput
@@ -141,9 +141,9 @@ export const Form = () => {
                 value={name}
               />
             ))}
-            <div className="wedding-calculate__package-containes">
-              <h6>* V ceně balíčku je:</h6>
-              <ul className="">
+            <div className="wedding-calculate__package">
+              <h6>* V ceně balíčku je </h6>
+              <ul className="wedding-calculate__package--content">
                 {currentPackage.map((item) => (
                   <li>{item}</li>
                 ))}
