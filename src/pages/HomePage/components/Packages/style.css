@@ -3,3 +3,10 @@
     display: flex;
   }
 }
+
+@media (min-width:1100px) {
+  .packages__container {
+    display: flex;
+    gap: calc((1100px - (3 * 325px)) / 2);
+  }
+}
