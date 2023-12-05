@@ -82,13 +82,6 @@ export const Form = ({ onFormSubmit }) => {
     setTotalPrice(price);
   }, [watch]);
 
-  //vynuluje inputy
-  useEffect(() => {
-    if (methods.formState.isSubmitSuccessful) {
-      methods.reset();
-    }
-  }, [methods.formState, methods.reset]);
-
   //fce onSubmit = uloží data do stavu
   const onSubmit = (data) => {
     setUserData(data);
@@ -99,7 +92,9 @@ export const Form = ({ onFormSubmit }) => {
   return (
     <FormProvider {...methods}>
       {showUserData ? (
-        <FormSummary userData={userData} price={totalPrice} />
+        <>
+        <FormSummary userData={userData} price={totalPrice}/>
+        </>
       ) : (
         <form
           className="wedding-calculate"
