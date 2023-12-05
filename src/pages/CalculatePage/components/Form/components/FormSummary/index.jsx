@@ -1,7 +1,10 @@
 import './style.css';
-export const FormSummary = ({ userData, price }) => {
-  console.log('FormSummary - Original Price:', price);
-  console.log('FormSummary - Type of Price:', typeof price);
+export const FormSummary = ({ userData, price}) => {
+
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="message-container">
       <h2 className="message-title">Rekapitulace formuláře</h2>
@@ -30,6 +33,9 @@ export const FormSummary = ({ userData, price }) => {
         </p>
         
         <p>Celková cena: {price}</p>
+        <div className="button-formSummary-container">
+        <button className="button-formSummary" onClick={reloadPage} type="submit" >Vrátit zpět</button>
+        </div>
       </div>
     </div>
   );

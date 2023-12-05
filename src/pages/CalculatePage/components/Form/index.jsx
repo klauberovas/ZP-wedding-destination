@@ -90,7 +90,9 @@ export const Form = ({ onFormSubmit }) => {
   return (
     <FormProvider {...methods}>
       {showUserData ? (
-        <FormSummary userData={userData} price={totalPrice} />
+        <>
+        <FormSummary userData={userData} price={totalPrice}/>
+        </>
       ) : (
         <form
           className="wedding-calculate"
