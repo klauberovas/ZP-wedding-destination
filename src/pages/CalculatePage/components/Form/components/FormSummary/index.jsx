@@ -1,5 +1,7 @@
 import './style.css';
 export const FormSummary = ({ userData, price }) => {
+  console.log('FormSummary - Original Price:', price);
+  console.log('FormSummary - Type of Price:', typeof price);
   return (
     <div className="message-container">
       <h2 className="message-title">Rekapitulace formuláře</h2>
@@ -26,6 +28,7 @@ export const FormSummary = ({ userData, price }) => {
         <p>
           Přeji si poslat potvrzení emailem: {userData.sendEmail ? 'Ano' : 'Ne'}
         </p>
+        
         <p>Celková cena: {price}</p>
       </div>
     </div>
