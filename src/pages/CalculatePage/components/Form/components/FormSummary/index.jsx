@@ -1,9 +1,16 @@
 import './style.css';
+import { listServices } from './../../data';
 export const FormSummary = ({ userData, price}) => {
 
   const reloadPage = () => {
     window.location.reload();
   };
+
+  const selectedServices = userData.services.map((service) => {
+    const serviceData = listServices.find((s) => s.value === service);
+    return serviceData ? `${serviceData.label} (${serviceData.price} Kč)` : '';
+  });
+
 
   return (
     <div className="message-container">
@@ -17,6 +24,11 @@ export const FormSummary = ({ userData, price}) => {
         <p>Typ obřadu: {userData.ceremony}</p>
         <p>Balíček: {userData.package}</p>
         <p>Destinace: {userData.destination}</p>
+        <p>Doplňkové služby:  <ul>
+          {selectedServices.map((service, index) => (
+            <li key={index}>{service}</li>
+          ))}
+        </ul></p>
         <p>Datum odletu: {userData.date.toLocaleDateString()}</p>
         <p>Místo obřadu: {userData.place}</p>
         <p>Cestujete s dětmi: {userData.children}</p>
