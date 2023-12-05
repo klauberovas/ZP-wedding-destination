@@ -2,6 +2,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useFormContext } from 'react-hook-form';
 import { useState } from 'react';
+import { ErrorMessage } from '../ErrorMessage';
 import './style.css';
 
 export const InputDate = () => {
@@ -32,6 +33,9 @@ export const InputDate = () => {
           minDate={new Date()}
           placeholderText=" Vyberte datum"
         />
+        {errors['date'] && (
+          <ErrorMessage text={'*Toto pole je povinné'} center={false} />
+        )}
       </label>
     </div>
   );
