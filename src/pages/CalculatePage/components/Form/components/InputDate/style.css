@@ -1,0 +1,14 @@
+.input-date {
+  display: flex;
+  justify-content: center;
+
+}
+
+.input-date__label,
+.input-date__picker {
+  flex-basis: 100%;
+}
+
+.input-date__label {
+  width: 300px;
+}

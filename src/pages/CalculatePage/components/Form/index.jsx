@@ -1,6 +1,7 @@
 import './style.css';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useState, useEffect } from 'react';
+
 //import komponent
 import { SelectInput } from './components/SelectInput';
 import { Input } from './components/Input';
@@ -8,7 +9,7 @@ import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
 import { CheckboxWithImg } from './components/CheckboxWithImg';
 import { Checkbox } from './components/Checkbox';
-import { calculatePrice } from './calculatePrice';
+import { ErrorMessage } from './components/ErrorMessage';
 import { Button } from '../../../../components/Button';
 import { FormSummary } from './components/FormSummary';
 import { PackageInfo } from './components/PackageInfo';
@@ -26,7 +27,8 @@ import {
   packageDeluxe,
   packagePremium,
 } from './data';
-import { ErrorMessage } from './components/ErrorMessage';
+import { calculatePrice } from './calculatePrice';
+import { InputDate } from './components/InputDate';
 
 export const Form = ({ onFormSubmit }) => {
   //obsah dat od U
@@ -111,8 +113,9 @@ export const Form = ({ onFormSubmit }) => {
               label="Destinace *"
               name="destination"
             />
+            <InputDate />
 
-            <Input label="Odlet nejdříve *" type="date" name="date" />
+            {/* <Input label="Odlet nejdříve *" type="date" name="date" /> */}
           </div>
 
           <h3 className="wedding-calculate__title">Typ obřadu</h3>
@@ -222,7 +225,7 @@ export const Form = ({ onFormSubmit }) => {
               />
               <Input
                 className="contact-label"
-                label="Telefon"
+                label="Telefon *"
                 name="phoneNumber"
                 type="tel"
                 pattern="[0-9]{9}"

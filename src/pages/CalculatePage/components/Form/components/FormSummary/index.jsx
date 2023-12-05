@@ -12,7 +12,7 @@ export const FormSummary = ({ userData, price }) => {
         <p>Typ obřadu: {userData.ceremony}</p>
         <p>Balíček: {userData.package}</p>
         <p>Destinace: {userData.destination}</p>
-        <p>Datum odletu: {userData.date}</p>
+        <p>Datum odletu: {userData.date.toLocaleDateString()}</p>
         <p>Místo obřadu: {userData.place}</p>
         <p>Cestujete s dětmi: {userData.children}</p>
         <p>Jméno: {userData.name}</p>

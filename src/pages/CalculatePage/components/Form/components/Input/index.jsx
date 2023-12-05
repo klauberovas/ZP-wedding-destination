@@ -14,7 +14,9 @@ export const Input = ({ type, label, name, min, pattern }) => {
         {label}
       </label>
       <input
-        {...register(name, { required: true })}
+        {...register(name, {
+          required: true,
+        })}
         className="field__input"
         type={type}
         id={name}
