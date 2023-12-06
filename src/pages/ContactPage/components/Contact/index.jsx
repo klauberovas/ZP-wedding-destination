@@ -3,7 +3,7 @@ import './style.css';
 
 export const Contact = () => {
   return (
-    <div className="contact-container">
+    <section className="contact-container">
       <div className="contact-icons">
         <div className="contact-adress">
           <MapPinned />
@@ -29,6 +29,6 @@ export const Contact = () => {
         </div>
       </div>
       <div className="contact-map corner--left"></div>
-    </div>
+    </section>
   );
 };
