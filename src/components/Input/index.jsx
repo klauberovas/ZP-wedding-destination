@@ -1,6 +1,6 @@
 import './style.css';
 import { useFormContext } from 'react-hook-form';
-import { ErrorMessage } from '../ErrorMessage';
+import { ErrorMessage } from '../../pages/CalculatePage/components/Form/components/ErrorMessage';
 
 export const Input = ({ type, label, name, min, pattern }) => {
   const {

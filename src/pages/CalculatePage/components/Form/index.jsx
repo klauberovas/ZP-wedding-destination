@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 //import komponent
 import { SelectInput } from './components/SelectInput';
-import { Input } from './components/Input';
+import { Input } from '../../../../components/Input';
 import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
 import { CheckboxWithImg } from './components/CheckboxWithImg';
