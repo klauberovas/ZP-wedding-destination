@@ -87,4 +87,12 @@
      max-width: 320px;
      max-height: 400px;
    }
+
+   .destination__hp {
+     gap: 4.3rem;
+   }
+
+   .destination {
+     margin: 0;
+   }
  }
