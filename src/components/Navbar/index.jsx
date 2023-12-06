@@ -1,13 +1,17 @@
 import './style.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { TabLink } from './TabLInk';
 
 export const Navbar = ({ isOpened, switchOff }) => {
-  
-  const [active, setActive] = useState('/');
+  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+  const location = useLocation();
 
-  const handleClick = (tab) => {
-    setActive(tab);
+  useEffect(() => {
+    setCurrentUrl(window.location.pathname.slice(1));
+  }, [location]);
+
+  const handleClick = () => {
     switchOff();
   };
 
@@ -15,24 +19,40 @@ export const Navbar = ({ isOpened, switchOff }) => {
     <nav className={`navbar ${isOpened ? 'navbar--open' : ''}`}>
       <ul className="navbar__list">
         <li className="navbar__item">
-        <TabLink toActive="/package" activeTab={active} onClick={() => handleClick('package')}>
-          Svatební zájezdy
+          <TabLink
+            isClick={'package' === currentUrl}
+            toActive="/package"
+            onClick={handleClick}
+          >
+            Svatební zájezdy
           </TabLink>
         </li>
         <li className="navbar__item">
-        <TabLink toActive="/wedding-calculate" activeTab={active} onClick={() => handleClick('wedding-calculate')}>
-          Svatební kalkulačka
-        </TabLink>
+          <TabLink
+            isClick={'wedding-calculate' === currentUrl}
+            toActive="/wedding-calculate"
+            onClick={handleClick}
+          >
+            Svatební kalkulačka
+          </TabLink>
         </li>
         <li className="navbar__item">
-        <TabLink toActive="/reference" activeTab={active} onClick={() => handleClick('reference')}>
-          Reference
-        </TabLink>
+          <TabLink
+            isClick={'reference' === currentUrl}
+            toActive="/reference"
+            onClick={handleClick}
+          >
+            Reference
+          </TabLink>
         </li>
         <li className="navbar__item">
-        <TabLink toActive="/contact" activeTab={active} onClick={() => handleClick('contact')}>
-          Kontakt
-        </TabLink>
+          <TabLink
+            isClick={'contact' === currentUrl}
+            toActive="/contact"
+            onClick={handleClick}
+          >
+            Kontakt
+          </TabLink>
         </li>
       </ul>
     </nav>

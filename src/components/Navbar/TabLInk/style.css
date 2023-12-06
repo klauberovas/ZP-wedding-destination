@@ -3,7 +3,7 @@
   padding-bottom: 5px;
 }
 
-.navbar__item.active {
+.active {
   font-weight: bold;
   text-decoration: underline;
 }
