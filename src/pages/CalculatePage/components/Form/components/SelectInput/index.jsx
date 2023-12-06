@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-import { ErrorMessage } from '../ErrorMessage';
+import { ErrorMessage } from '../../../../../../components/ErrorMessage';
 
 export const SelectInput = ({ data, label, name }) => {
   const {

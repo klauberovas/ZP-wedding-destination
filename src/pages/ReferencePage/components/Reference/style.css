@@ -12,11 +12,11 @@
   width: 100%;
 }
 
-.left-corner {
+.corner--left {
   border-radius: 80px 0 0 0;
 }
 
-.right-corner {
+.corner--right {
   border-radius: 0 80px 0 0;
 }
 

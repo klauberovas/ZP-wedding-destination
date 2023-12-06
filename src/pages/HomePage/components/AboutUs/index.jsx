@@ -6,7 +6,7 @@ export const AboutUs = () => {
     <section className="about-us">
       <Title label="Proč s námi?" />
       <div className="container-flex">
-        <div className="container-flex__item about-us__img right-corner hidden">
+        <div className="container-flex__item about-us__img corner--right hidden">
           <p className="photo__rights photo__rights--left">
             Photo by Adéla Boháčkova Photography
           </p>

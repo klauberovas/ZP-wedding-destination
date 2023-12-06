@@ -1,7 +1,6 @@
 import './style.css';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useState, useEffect } from 'react';
-
 //import komponent
 import { SelectInput } from './components/SelectInput';
 import { Input } from '../../../../components/Input';
@@ -9,11 +8,12 @@ import { RadioInput } from './components/RadioInput';
 import { RadioInputDown } from './components/RadioInputDown';
 import { CheckboxWithImg } from './components/CheckboxWithImg';
 import { Checkbox } from './components/Checkbox';
-import { ErrorMessage } from './components/ErrorMessage';
+import { ErrorMessage } from '../../../../components/ErrorMessage';
 import { Button } from '../../../../components/Button';
 import { FormSummary } from './components/FormSummary';
 import { PackageInfo } from './components/PackageInfo';
 import { PriceIndicator } from './components/PriceIndicator';
+import { InputDate } from './components/InputDate';
 //import dat
 import {
   listDestinations,
@@ -27,8 +27,8 @@ import {
   packageDeluxe,
   packagePremium,
 } from './data';
+//import fce
 import { calculatePrice } from './calculatePrice';
-import { InputDate } from './components/InputDate';
 
 export const Form = ({ onFormSubmit }) => {
   //obsah dat od U

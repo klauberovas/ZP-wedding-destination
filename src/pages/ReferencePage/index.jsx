@@ -69,7 +69,7 @@ export const ReferencePage = () => {
               text={text}
               photo={photo}
               alt={alt}
-              corner={id % 2 === 0 ? 'right-corner' : 'left-corner'}
+              corner={id % 2 === 0 ? 'corner--right' : 'corner--left'}
               order={id % 2 !== 0 ? 'order--second' : null}
               gallery={gallery}
             />

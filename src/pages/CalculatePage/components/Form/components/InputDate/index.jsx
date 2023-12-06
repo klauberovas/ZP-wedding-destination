@@ -2,7 +2,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useFormContext } from 'react-hook-form';
 import { useState } from 'react';
-import { ErrorMessage } from '../ErrorMessage';
+import { ErrorMessage } from '../../../../../../components/ErrorMessage';
 import './style.css';
 
 export const InputDate = () => {
