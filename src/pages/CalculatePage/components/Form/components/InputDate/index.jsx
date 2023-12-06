@@ -21,6 +21,7 @@ export const InputDate = () => {
           {...register('date', {
             required: true,
           })}
+          id="date"
           className="input-date__picker"
           showIcon
           name="date"
