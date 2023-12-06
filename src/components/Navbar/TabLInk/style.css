@@ -1,13 +1,15 @@
 .navbar__item {
-  text-decoration: none; 
-  padding-bottom: 5px; 
+  text-decoration: none;
+  padding-bottom: 5px;
 }
 
 .navbar__item.active {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .navbar__item:hover {
-  color: rgb(160, 127, 127);
+  /* color: var(--button); */
+  /* font-style: italic; */
+  font-weight: bold;
 }
-
