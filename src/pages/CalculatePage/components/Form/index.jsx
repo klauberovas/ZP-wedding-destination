@@ -204,8 +204,8 @@ export const Form = ({ onFormSubmit }) => {
             </p>
           </div>
           <h3>Kontaktní formulář</h3>
-          <div className="wedding-contact">
-            <div className="wedding-contact__inputs">
+          <div className="contact-form">
+            <div className="contact-form__fields">
               <Input
                 className="contact-label"
                 label="Jméno *"

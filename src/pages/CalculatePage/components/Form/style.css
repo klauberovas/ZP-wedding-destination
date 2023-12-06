@@ -54,19 +54,6 @@
   }
 }
 
-.wedding-contact {
-  display: flex;
-  justify-content: center;
-}
-
-.wedding-contact__inputs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 700px;
-  gap: 1rem;
-}
-
 @media (min-width: 450px) {
 
   .wedding-calculate__place,
