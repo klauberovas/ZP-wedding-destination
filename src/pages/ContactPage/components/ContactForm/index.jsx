@@ -22,7 +22,7 @@ export const ContactForm = ({ onFormSubmit }) => {
 
   return (
     <FormProvider {...methods}>
-      <section className="section--margin-top">
+      <section>
         <Title label="Kontaktní formulář" />
         <form
           className="contact-form"

@@ -102,7 +102,7 @@ export const Form = ({ onFormSubmit }) => {
         >
           <PriceIndicator totalPrice={totalPrice} />
 
-          <div className="wedding-calculate__inputs">
+          <div className="wedding-calculate__inputs wedding-calculate__field">
             <SelectInput
               data={listDestinations}
               label="Destinace *"
@@ -114,7 +114,7 @@ export const Form = ({ onFormSubmit }) => {
           </div>
 
           <h3 className="wedding-calculate__title">Typ obřadu</h3>
-          <div className="wedding-calculate__ceremony">
+          <div className="wedding-calculate__ceremony wedding-calculate__field">
             {listCeremony.map(({ name, photo, type, price }, index) => (
               <RadioInput
                 key={index}
@@ -128,7 +128,7 @@ export const Form = ({ onFormSubmit }) => {
           </div>
 
           <h3 className="wedding-calculate__title">Typ svatebního balíčku</h3>
-          <div className="wedding-calculate__packages">
+          <div className="wedding-calculate__packages wedding-calculate__field">
             {listPackage.map(({ name, photo, type, price }, index) => (
               <RadioInput
                 key={index}
@@ -143,7 +143,7 @@ export const Form = ({ onFormSubmit }) => {
           <PackageInfo currentPackage={currentPackage} />
 
           <h3 className="wedding-calculate__title">Doplňkové služby</h3>
-          <div className="wedding-calculate__services">
+          <div className="wedding-calculate__services wedding-calculate__field">
             {listServices.map(({ photo, id, value, label, price }) => {
               {
                 if (isInPackage(value)) {
@@ -173,7 +173,7 @@ export const Form = ({ onFormSubmit }) => {
           {errors.place && (
             <ErrorMessage text={'*Vyberte jednu z možností'} center={true} />
           )}
-          <div className="wedding-calculate__place">
+          <div className="wedding-calculate__place wedding-calculate__field">
             {listPlaces.map(({ name, type }, index) => (
               <RadioInputDown
                 key={index}
@@ -188,7 +188,7 @@ export const Form = ({ onFormSubmit }) => {
           {errors.children && (
             <ErrorMessage text={'*Vyberte jednu z možností'} center={true} />
           )}
-          <div className="wedding-calculate__question">
+          <div className="wedding-calculate__question wedding-calculate__field">
             <RadioInputDown label="Ano" name="children" value="Ano" />
             <RadioInputDown label="Ne" name="children" value="Ne" />
           </div>
