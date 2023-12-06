@@ -10,6 +10,8 @@ font-family: 'Nunito Sans', sans-serif; TEXT extra light, light, regular, medium
   --background-secundary: #F5F5F5;
   --button: #DDCC9F;
   --text: #3D3B3A;
+  --font-title: 'Lora';
+  --font-global: 'Nunito Sans'
 }
 
 * {
@@ -17,7 +19,7 @@ font-family: 'Nunito Sans', sans-serif; TEXT extra light, light, regular, medium
 }
 
 html {
-  font-family: 'Nunito Sans';
+  font-family: var(--font-global);
 }
 
 body {

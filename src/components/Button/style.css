@@ -6,10 +6,12 @@
 
 
 .button {
+  font-size: 16px;
+  font-family: var(--font-global);
   background-color: var(--button);
   border-radius: 10px;
   padding: 0.7rem;
-  box-shadow: 0px 4px 6px 0px #3d3b3ac9;
+  box-shadow: 0px 4px 6px 0px var(--text);
 }
 
 .button:active {
@@ -25,7 +27,7 @@
     /* background-color: var(--background-primary); */
     color: #ffffff;
     scale: 1.1;
-    box-shadow: 0px 2px 4px 0px #3d3b3ac9;
+    box-shadow: 0px 2px 4px 0px var(--text);
   }
 
 }
