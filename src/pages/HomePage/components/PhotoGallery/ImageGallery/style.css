@@ -52,10 +52,11 @@
   .photo {
     overflow: visible;
     flex-wrap: wrap;
+    /* gap: 2rem; */
   }
 
   .img-gallery {
-    max-width: 250px;
+    max-width: 275px;
     flex-basis: calc(100 / 4);
   }
 }
