@@ -7,6 +7,9 @@ export const AboutUs = () => {
       <Title label="Proč s námi?" />
       <div className="container-flex">
         <div className="container-flex__item about-us__img right-corner hidden">
+          <p className="photo__rights photo__rights--left">
+            Photo by Adéla Boháčkova Photography
+          </p>
           <div className="about-us__label hidden">
             <p>
               od <span className="about-us__large">2015</span>

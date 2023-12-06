@@ -117,3 +117,22 @@ input:not([type="radio"]):not([type="checkbox"]),
 select {
   width: 300px;
 }
+
+/*-----popisek fotky -----*/
+.photo__rights {
+  font-size: 0.5rem;
+  color: #ffffff;
+  font-style: italic;
+
+  position: absolute;
+}
+
+.photo__rights--right {
+  right: 2%;
+  bottom: 0;
+}
+
+.photo__rights--left {
+  left: 2%;
+  bottom: 0;
+}
