@@ -42,8 +42,13 @@ main {
   position: relative;
 }
 
+/*-----Sekce----*/
 section {
   margin: 4rem 0;
+}
+
+.section--margin-top {
+  margin-top: 0;
 }
 
 /*----úvodní text pod titlem---*/

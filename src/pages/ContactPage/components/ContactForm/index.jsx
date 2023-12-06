@@ -4,6 +4,7 @@ import { Input } from '../../../../components/Input';
 import { Button } from '../../../../components/Button';
 import { TextArea } from './components/TextArea';
 import { useEffect } from 'react';
+import { Title } from '../../../../components/Title';
 
 export const ContactForm = ({ onFormSubmit }) => {
   const methods = useForm({});
@@ -21,37 +22,43 @@ export const ContactForm = ({ onFormSubmit }) => {
 
   return (
     <FormProvider {...methods}>
-      <form className="contact-form" onSubmit={methods.handleSubmit(onSubmit)}>
-        <section className="contact-form__fields">
-          <Input
-            className="contact-form__input"
-            label="Jméno *"
-            name="name"
-            type="text"
-          />
-          <Input
-            className="contact-form__input"
-            label="Příjmení *"
-            name="lastname"
-            type="text"
-          />
-          <Input
-            className="contact-form__input"
-            label="Telefon *"
-            name="phoneNumber"
-            type="tel"
-            pattern="[0-9]{9}"
-          />
-          <Input
-            className="contact-form__input"
-            label="Email *"
-            name="email"
-            type="email"
-          />
-          <TextArea />
-        </section>
-        <Button label="Odeslat" />
-      </form>
+      <section className="section--margin-top">
+        <Title label="Kontaktní formulář" />
+        <form
+          className="contact-form"
+          onSubmit={methods.handleSubmit(onSubmit)}
+        >
+          <div className="contact-form__fields">
+            <Input
+              className="contact-form__input"
+              label="Jméno *"
+              name="name"
+              type="text"
+            />
+            <Input
+              className="contact-form__input"
+              label="Příjmení *"
+              name="lastname"
+              type="text"
+            />
+            <Input
+              className="contact-form__input"
+              label="Telefon *"
+              name="phoneNumber"
+              type="tel"
+              pattern="[0-9]{9}"
+            />
+            <Input
+              className="contact-form__input"
+              label="Email *"
+              name="email"
+              type="email"
+            />
+            <TextArea />
+          </div>
+          <Button label="Odeslat" />
+        </form>
+      </section>
     </FormProvider>
   );
 };
