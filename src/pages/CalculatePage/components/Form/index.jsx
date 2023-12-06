@@ -82,7 +82,7 @@ export const Form = ({ onFormSubmit }) => {
     setTotalPrice(price);
   }, [watch]);
 
-  //fce onSubmit = uloží data do stavu
+  //fce onSubmit
   const onSubmit = (data) => {
     setUserData(data);
     setShowUserData(true);
@@ -93,7 +93,7 @@ export const Form = ({ onFormSubmit }) => {
     <FormProvider {...methods}>
       {showUserData ? (
         <>
-        <FormSummary userData={userData} price={totalPrice}/>
+          <FormSummary userData={userData} price={totalPrice} />
         </>
       ) : (
         <form
