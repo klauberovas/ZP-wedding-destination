@@ -31,9 +31,6 @@ import {
 import { calculatePrice } from './calculatePrice';
 
 export const Form = ({ onFormSubmit }) => {
-  //obsah dat od U
-  const [userData, setUserData] = useState();
-
   //obsah aktuálního balíčku
   const [currentPackage, setCurrentPackage] = useState(listLight);
 
@@ -83,8 +80,7 @@ export const Form = ({ onFormSubmit }) => {
   }, [watch]);
 
   //fce onSubmit
-  const onSubmit = (data) => {
-    setUserData(data);
+  const onSubmit = () => {
     setShowUserData(true);
     onFormSubmit();
   };
@@ -93,7 +89,7 @@ export const Form = ({ onFormSubmit }) => {
     <FormProvider {...methods}>
       {showUserData ? (
         <>
-          <FormSummary userData={userData} price={totalPrice} />
+          <FormSummary price={totalPrice} />
         </>
       ) : (
         <form
