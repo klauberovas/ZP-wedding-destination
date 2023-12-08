@@ -1,0 +1,54 @@
+
+.message {
+  padding: 5%;
+  background-color: #F0F0F0;
+  border: 1px solid var(--background-primary);
+  border-radius: 4px;
+}
+
+.check-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-formSummary-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-formSummary {
+  background-color: var(--button);
+  border-radius: 10px;
+  padding: 0.7rem;
+  width: 150px;
+  border: none;
+  box-shadow: 0px 4px 6px 0px #3d3b3ac9;
+}
+
+.button-formSummary:active {
+  scale: 0.9;
+}
+
+@media (min-width: 350px) {
+  .message-container {
+    margin: 0 auto;
+    width: 80vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button-formSummary:hover {
+    /* background-color: var(--background-primary); */
+    color: #ffffff;
+    scale: 1.1;
+  }
+
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vw;
+    border-radius: 20px;
+  }
+}

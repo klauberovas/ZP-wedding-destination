@@ -16,7 +16,7 @@ export const ContactPage = () => {
     <>
       <ButtonBack />
       <main>
-        <Contact />
+      {!formSubmitted && <Contact />} 
         <ContactForm onFormSubmit={handleFormSubmit} />
         <ButtonUp />
       </main>
