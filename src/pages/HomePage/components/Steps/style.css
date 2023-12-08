@@ -10,12 +10,24 @@
 @media (min-width: 768px) {
   .steps__container {
     flex-direction: row;
-    gap: 1.7rem;
+    gap: calc((100% - (4 * 180px))/ 3);
+  }
+}
+
+@media (min-width: 850px) {
+  .steps__container {
+    gap: calc((100% - (4 * 200px))/ 3);
+  }
+}
+
+@media (min-width: 950px) {
+  .steps__container {
+    gap: calc((100% - (4 * 220px))/ 3);
   }
 }
 
 @media (min-width: 1100px) {
   .steps__container {
-    gap: 3rem;
+    gap: calc((100% - (4 * 230px))/ 3);
   }
 }
