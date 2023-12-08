@@ -39,10 +39,12 @@
 @media (min-width: 768px) {
   .package {
     flex: 0 1 30%;
+    height: 450px;
   }
 
   .package__list {
     margin-left: 0;
+    padding: 0 0.8rem 0 45px;
   }
 
   .package__price {
