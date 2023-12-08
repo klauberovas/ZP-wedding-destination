@@ -41,6 +41,8 @@ export const FormSummary = ({ price }) => {
         <p>Příjmení: {watch.lastname}</p>
         <p>Telefon: {watch.phoneNumber}</p>
         <p>Email: {watch.email}</p>
+        <p>Počet hostů: {watch.guests}</p>
+        <p>Počet nocí: {watch.nights}</p>
         <p>
           Souhlasím se zpracováním osobních údajů: {watch.agree ? 'Ano' : 'Ne'}
         </p>

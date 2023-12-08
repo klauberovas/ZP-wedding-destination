@@ -189,8 +189,6 @@ export const Form = ({ onFormSubmit }) => {
             <RadioInputDown label="Ne" name="children" value="Ne" />
           </div>
 
-          {/* <Input label="Počet hostů *" type="number" name="guests" min="0" />
-          <Input label="Počet nocí *" type="number" name="nights" min="0" /> */}
           <div className="wedding-calculate__info">
             <p>*Odhad kalkulačky je pouze orientační.</p>
             <p>
@@ -226,7 +224,14 @@ export const Form = ({ onFormSubmit }) => {
                 label="Email *"
                 name="email"
                 type="email"
+              />{' '}
+              <Input
+                label="Počet hostů *"
+                type="number"
+                name="guests"
+                min="0"
               />
+              <Input label="Počet nocí *" type="number" name="nights" min="0" />
             </div>
           </div>
           <Checkbox
