@@ -9,10 +9,16 @@ export const FormSummary = ({ price }) => {
     window.location.reload();
   };
 
-  const selectedServices = watch.services.map((service) => {
-    const serviceData = listServices.find((s) => s.value === service);
-    return serviceData ? `${serviceData.label} (${serviceData.price} Kč)` : '';
-  });
+  const selectedServices = watch.services
+    ? watch.services.map((service) => {
+        const serviceData = listServices.find((s) => s.value === service);
+        return serviceData
+          ? `${serviceData.label} (${serviceData.price} Kč)`
+          : '';
+      })
+    : [];
+
+    const showServicesSection = selectedServices.length > 0;
 
   return (
     <div className="message-container">
@@ -26,14 +32,16 @@ export const FormSummary = ({ price }) => {
         <p>Typ obřadu: {watch.ceremony}</p>
         <p>Balíček: {watch.package}</p>
         <p>Destinace: {watch.destination}</p>
-        <p>
-          Doplňkové služby:{' '}
-          <ul>
-            {selectedServices.map((service, index) => (
-              <li key={index}>{service}</li>
-            ))}
-          </ul>
-        </p>
+        {showServicesSection && (
+          <>
+            <p>Doplňkové služby:{' '}</p>
+            <ul>
+              {selectedServices.map((service, index) => (
+                <li key={index}>{service}</li>
+              ))}
+            </ul>
+          </>
+        )}
         <p>Datum odletu: {watch.date.toLocaleDateString()}</p>
         <p>Místo obřadu: {watch.place}</p>
         <p>Cestujete s dětmi: {watch.children}</p>
