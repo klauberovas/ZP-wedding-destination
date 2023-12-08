@@ -3,7 +3,7 @@ export const dataDestination = [
 {
  id: 0,
  title: 'MALEDIVY',
- description: 'Maledivy luxusní destinace v Indickém oceánu složená z 19 atolů a tíse ostrovů. Bílé pláže pod kokosovými palmami, korálové útesy plné pestrobarevných ryb a křišťálově čisté moře - to vše je symbolem luxusní dovolené a snem každého zasnoubeného páru.'
+ description: 'Maledivy luxusní destinace složená z 19 atolů a tíse ostrovů. Bílé pláže pod kokosovými palmami, korálové útesy plné pestrobarevných ryb a křišťálově čisté moře - to vše je symbolem luxusní dovolené a snem každého zasnoubeného páru.'
 },
 {
   id: 1,

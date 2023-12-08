@@ -3,10 +3,13 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { Input } from '../../../../components/Input';
 import { Button } from '../../../../components/Button';
 import { TextArea } from './components/TextArea';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Title } from '../../../../components/Title';
+import { ContactSummary } from './components/TextArea/ContactSummary';
 
 export const ContactForm = ({ onFormSubmit }) => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const methods = useForm({});
 
   const watch = methods.watch();
@@ -18,11 +21,16 @@ export const ContactForm = ({ onFormSubmit }) => {
 
   const onSubmit = (data) => {
     onFormSubmit();
+    setFormSubmitted(true);
   };
 
   return (
     <FormProvider {...methods}>
-      <section>
+      {formSubmitted ? (
+      <ContactSummary />
+      ) : (
+        <>
+         <section>
         <Title label="Kontaktní formulář" />
         <form
           className="contact-form"
@@ -59,6 +67,8 @@ export const ContactForm = ({ onFormSubmit }) => {
           <Button label="Odeslat" />
         </form>
       </section>
+      </>
+      )}
     </FormProvider>
   );
 };

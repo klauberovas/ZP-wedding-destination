@@ -11,7 +11,8 @@ export const TextArea = () => {
   return (
     <div className="textarea field">
       <label htmlFor="message" className="textarea__label field__label">
-        Zpráva *
+        Zpráva * <br/>
+        (...vaše představa svatby, zájezdu..)
       </label>
       <textarea
         className="textarea__input field__input"
