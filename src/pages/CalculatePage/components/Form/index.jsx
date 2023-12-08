@@ -105,8 +105,6 @@ export const Form = ({ onFormSubmit }) => {
               name="destination"
             />
             <InputDate />
-
-            {/* <Input label="Odlet nejdříve *" type="date" name="date" /> */}
           </div>
 
           <h3 className="wedding-calculate__title">Typ obřadu</h3>
@@ -153,9 +151,6 @@ export const Form = ({ onFormSubmit }) => {
                     name="services"
                     value={value}
                     price={price}
-                    // checked={
-                    //   userData.services.includes(value) || isInPackage(value)
-                    // }
                     disabled={isInPackage(value)}
                   />
                 );

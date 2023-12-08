@@ -18,7 +18,7 @@ export const FormSummary = ({ price }) => {
       })
     : [];
 
-    const showServicesSection = selectedServices.length > 0;
+  const showServicesSection = selectedServices.length > 0;
 
   return (
     <div className="message-container">
@@ -34,7 +34,7 @@ export const FormSummary = ({ price }) => {
         <p>Destinace: {watch.destination}</p>
         {showServicesSection && (
           <>
-            <p>Doplňkové služby:{' '}</p>
+            <p>Doplňkové služby: </p>
             <ul>
               {selectedServices.map((service, index) => (
                 <li key={index}>{service}</li>
@@ -42,6 +42,9 @@ export const FormSummary = ({ price }) => {
             </ul>
           </>
         )}
+        <p>Celková cena: {price}</p>
+
+        <h5>Doplňující informace:</h5>
         <p>Datum odletu: {watch.date.toLocaleDateString()}</p>
         <p>Místo obřadu: {watch.place}</p>
         <p>Cestujete s dětmi: {watch.children}</p>
@@ -58,7 +61,6 @@ export const FormSummary = ({ price }) => {
           Přeji si poslat potvrzení emailem: {watch.sendEmail ? 'Ano' : 'Ne'}
         </p>
 
-        <p>Celková cena: {price}</p>
         <div className="button-formSummary-container">
           <button
             className="button-formSummary"
