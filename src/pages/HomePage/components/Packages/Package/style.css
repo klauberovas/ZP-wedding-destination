@@ -36,6 +36,10 @@
   padding: 0.5rem;
 }
 
+.package__contains {
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .package {
     flex: 0 1 30%;
