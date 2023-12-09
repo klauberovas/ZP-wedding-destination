@@ -32,6 +32,9 @@ export const ImageGallery = ({ images }) => {
             style={{ translate: `${-100 * image}%` }}
           />
         ))}
+         <p className="photo__rights photo__rights--left">
+            Photos by Adéla Boháčkova Photography
+          </p>
       </div>
       <button onClick={showPrevImage} className="img-btn" style={{ left: 0 }}>
         <ChevronLeft aria-hidden />

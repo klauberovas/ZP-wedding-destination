@@ -65,6 +65,7 @@
    }
 
    .destinaton {
+    display: flex;
      max-height: 450px;
      margin: 0 auto;
    }
