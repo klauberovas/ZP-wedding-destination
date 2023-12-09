@@ -7,6 +7,7 @@ export const FormSummary = ({ price }) => {
 
   const reloadPage = () => {
     window.location.reload();
+    window.scrollTo(0, 0);
   };
 
   const selectedServices = watch.services
