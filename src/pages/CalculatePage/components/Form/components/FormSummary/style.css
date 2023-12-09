@@ -1,3 +1,6 @@
+.message-container p {
+  margin: 0;
+}
 
 .message {
   padding: 5%;
@@ -10,6 +13,14 @@
   margin-left: 0;
 }
 
+.message__price {
+  font-weight: bold;
+}
+
+.message__details h4 {
+  margin-bottom: 0;
+}
+
 .button-formSummary-container {
   display: flex;
   justify-content: center;
@@ -19,6 +30,7 @@
   background-color: var(--button);
   border-radius: 10px;
   padding: 0.7rem;
+  margin-top: 2rem;
   width: 150px;
   border: none;
   box-shadow: 0px 4px 6px 0px #3d3b3ac9;
@@ -26,10 +38,6 @@
 
 .button-formSummary:active {
   scale: 0.9;
-}
-
-h5 {
-  font-weight:lighter;
 }
 
 @media (min-width: 350px) {
@@ -54,4 +62,3 @@ h5 {
     border-radius: 20px;
   }
 }
-

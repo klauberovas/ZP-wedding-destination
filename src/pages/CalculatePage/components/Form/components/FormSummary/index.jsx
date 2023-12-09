@@ -42,24 +42,30 @@ export const FormSummary = ({ price }) => {
             </ul>
           </>
         )}
-        <p>Celková cena: {price}</p>
 
-        <h5>Doplňující informace:</h5>
-        <p>Datum odletu: {watch.date.toLocaleDateString()}</p>
-        <p>Místo obřadu: {watch.place}</p>
-        <p>Cestujete s dětmi: {watch.children}</p>
-        <p>Jméno: {watch.name}</p>
-        <p>Příjmení: {watch.lastname}</p>
-        <p>Telefon: {watch.phoneNumber}</p>
-        <p>Email: {watch.email}</p>
-        <p>Počet hostů: {watch.guests}</p>
-        <p>Počet nocí: {watch.nights}</p>
         <p>
-          Souhlasím se zpracováním osobních údajů: {watch.agree ? 'Ano' : 'Ne'}
+          Celková cena: <span className="message__price">{price} </span>
         </p>
-        <p>
-          Přeji si poslat potvrzení emailem: {watch.sendEmail ? 'Ano' : 'Ne'}
-        </p>
+
+        <div className="message__details">
+          <h4>Doplňující informace:</h4>
+          <p>Datum odletu: {watch.date.toLocaleDateString()}</p>
+          <p>Místo obřadu: {watch.place}</p>
+          <p>Cestujete s dětmi: {watch.children}</p>
+          <p>Jméno: {watch.name}</p>
+          <p>Příjmení: {watch.lastname}</p>
+          <p>Telefon: {watch.phoneNumber}</p>
+          <p>Email: {watch.email}</p>
+          <p>Počet hostů: {watch.guests}</p>
+          <p>Počet nocí: {watch.nights}</p>
+          <p>
+            Souhlasím se zpracováním osobních údajů:{' '}
+            {watch.agree ? 'Ano' : 'Ne'}
+          </p>
+          <p>
+            Přeji si poslat potvrzení emailem: {watch.sendEmail ? 'Ano' : 'Ne'}
+          </p>
+        </div>
 
         <div className="button-formSummary-container">
           <button
