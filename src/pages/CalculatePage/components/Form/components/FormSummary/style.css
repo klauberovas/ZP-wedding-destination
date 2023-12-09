@@ -28,6 +28,10 @@
   scale: 0.9;
 }
 
+h5 {
+  font-weight:lighter;
+}
+
 @media (min-width: 350px) {
   .message-container {
     margin: 0 auto;

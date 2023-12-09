@@ -11,22 +11,22 @@ import pic7 from "./pic7.jpg"
 import pic8 from "./pic8.jpg"
 
 const IMAGES = [
-  { url: pic1, alt: "" },
-  { url: pic2, alt: "" },
-  { url: pic3, alt: "" },
-  { url: pic4, alt: "" }, 
-  { url: pic5, alt: "" },
-  { url: pic6, alt: "" },
-  { url: pic7, alt: "" },
-  { url: pic8, alt: "" },
+  { url: pic1, alt: "Bride and groom" },
+  { url: pic2, alt: "Wedding cake" },
+  { url: pic3, alt: "Paradise wedding" },
+  { url: pic4, alt: "Sunset couple" }, 
+  { url: pic5, alt: "Say Yes" },
+  { url: pic6, alt: "Beach kiss" },
+  { url: pic7, alt: "Beach photo" },
+  { url: pic8, alt: "Beach photo" },
 ]
 
-export const Photogallery = () => {
+export const Photogallery = ({alt}) => {
   return (
     <section className="photogallery">
     <div className="photo-gallery-all" >
     <Title label="Fotogalerie" />
-      <ImageGallery images={IMAGES} />
+      <ImageGallery images={IMAGES} alt={alt} />
     </div>
     </section>
   )
